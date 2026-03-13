@@ -146,7 +146,7 @@ export default function About() {
                 aspectRatio: "4/5",
               }}>
                 <img
-                  src="/najman.jpg"
+                  src="/najman.jpeg"
                   alt="Najman — Ahamed Web Studio"
                   style={{
                     width: "100%", height: "100%",

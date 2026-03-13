@@ -90,11 +90,12 @@ function StepCard({ step, index, active, onClick, entered }: { step: Step; index
         borderRadius: 8,
         padding: "22px 24px",
         cursor: "pointer",
-        transition: "all 0.35s cubic-bezier(0.16,1,0.3,1)",
+        transition: entered
+          ? "background 0.35s cubic-bezier(0.16,1,0.3,1), border-color 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease, transform 0.35s ease"
+          : `background 0.35s cubic-bezier(0.16,1,0.3,1), border-color 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease ${index * 0.08}s, transform 0.35s ease ${index * 0.08}s`,
         boxShadow: isActive ? `0 8px 32px ${step.color}14` : "none",
         opacity: entered ? 1 : 0,
         transform: entered ? "translateX(0)" : "translateX(-20px)",
-        transitionDelay: `${index * 0.08}s`,
         position: "relative",
         overflow: "hidden",
       }}
@@ -316,6 +317,7 @@ export default function HowItWorks() {
         paddingBlock: "clamp(5rem,10vw,8rem)",
         paddingInline: "clamp(1.25rem,6vw,4rem)",
         borderTop: "1px solid #E5E3DD",
+        overflow: "hidden",
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
