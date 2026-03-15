@@ -104,7 +104,7 @@ function IPhoneScreen({ project }: { project: Project }) {
 
       {/* iOS status bar */}
       <div style={{
-        position: "absolute", top: 0, left: 0, right: 0, height: STATUS_H,
+        position: "absolute", top: 10, left: 0, right: 0, height: STATUS_H,
         background: palette.bg, zIndex: 10,
         display: "flex", alignItems: "center", justifyContent: "space-between",
         paddingInline: "14px 10px",
@@ -142,8 +142,8 @@ function IPhoneScreen({ project }: { project: Project }) {
           onLoad={() => setLoaded(true)}
           style={{
             position: "absolute", top: STATUS_H, left: 0,
-            width: 390, height: 844,
-            transform: "scale(0.472)",
+            width: 395, height: 844,
+            transform: "scale(0.553)",
             transformOrigin: "top left",
             border: "none", pointerEvents: "none",
             opacity: loaded ? 1 : 0,
@@ -206,22 +206,22 @@ function IPhone({ project }: { project: Project }) {
   });
 
   return (
-    <div style={{ position: "relative", width: 184, height: 378 }}>
-      <div style={btn("left", 58, 14)} />
-      <div style={btn("left", 80, 28)} />
-      <div style={btn("left", 116, 28)} />
-      <div style={btn("right", 98, 44)} />
+    <div style={{ position: "relative", width: 220, height: 452 }}>
+      <div style={btn("left", 69, 17)} />
+      <div style={btn("left", 96, 33)} />
+      <div style={btn("left", 139, 33)} />
+      <div style={btn("right", 117, 53)} />
 
       <div style={{
-        position: "relative", width: 184, height: 378,
-        borderRadius: 48,
+        position: "relative", width: 220, height: 452,
+        borderRadius: 58,
         background: "linear-gradient(160deg, #3C3C3C 0%, #1C1C1E 55%, #2C2C2C 100%)",
-        boxShadow: "0 40px 100px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.3), 0 0 0 1.5px rgba(255,255,255,0.08), inset 0 1px 0 rgba(255,255,255,0.12)",
+        boxShadow: "0 48px 120px rgba(0,0,0,0.55), 0 12px 36px rgba(0,0,0,0.3), 0 0 0 1.5px rgba(255,255,255,0.08), inset 0 1px 0 rgba(255,255,255,0.12)",
         overflow: "hidden",
       }}>
         {/* Titanium sheen */}
         <div style={{
-          position: "absolute", inset: 0, borderRadius: 48,
+          position: "absolute", inset: 0, borderRadius: 58,
           background: "linear-gradient(135deg, rgba(255,255,255,0.09) 0%, transparent 45%)",
           zIndex: 20, pointerEvents: "none",
         }} />
@@ -230,15 +230,15 @@ function IPhone({ project }: { project: Project }) {
         <div style={{
           position: "absolute",
           top: 5, left: 5, right: 5, bottom: 5,
-          borderRadius: 43, overflow: "hidden",
+          borderRadius: 52, overflow: "hidden",
         }}>
           <IPhoneScreen project={project} />
 
           {/* Dynamic Island */}
           <div style={{
-            position: "absolute", top: 13, left: "50%",
+            position: "absolute", top: 15, left: "50%",
             transform: "translateX(-50%)",
-            width: 62, height: 16, borderRadius: 999,
+            width: 74, height: 19, borderRadius: 999,
             background: "#060606", zIndex: 30,
           }} />
 
@@ -355,7 +355,7 @@ export default function Work() {
             padding: "48px 32px",
             borderRight: "1px solid #E5E3DD",
             overflow: "hidden",
-            minHeight: 520,
+            minHeight: 580,
             background: `linear-gradient(150deg, ${project.palette.bg} 0%, ${project.palette.light}66 100%)`,
             transition: "background 0.6s ease",
           }}>
@@ -635,7 +635,7 @@ export default function Work() {
         @media (max-width: 768px) {
           .work-panel { grid-template-columns: 1fr !important; }
           .work-panel > div:first-child {
-            min-height: 460px !important;
+            min-height: 520px !important;
             padding: 32px 20px !important;
             border-right: none !important;
             border-bottom: 1px solid #E5E3DD;
