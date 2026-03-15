@@ -28,8 +28,8 @@ function SpeedVisual({ visible }: { visible: boolean }) {
       boxShadow: "0 4px 24px rgba(26,40,72,0.08)",
     }}>
       <p style={{
-        fontFamily: "var(--font-mono)", fontSize: 9,
-        letterSpacing: "0.2em", color: "#6B6B68",
+        fontFamily: "var(--font-mono)", fontSize: 11,
+        letterSpacing: "0.18em", color: "#4E4E4B",
         marginBottom: 14, textTransform: "uppercase",
       }}>
         Page Load Speed Comparison
@@ -38,10 +38,10 @@ function SpeedVisual({ visible }: { visible: boolean }) {
       {/* Their site */}
       <div style={{ marginBottom: 12 }}>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5 }}>
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "#6B6B68", letterSpacing: "0.1em" }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "#4E4E4B", letterSpacing: "0.1em" }}>
             Typical local site
           </span>
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "#C0392B", fontWeight: 500 }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "#C0392B", fontWeight: 500 }}>
             6.8s
           </span>
         </div>
@@ -58,10 +58,10 @@ function SpeedVisual({ visible }: { visible: boolean }) {
       {/* Our site */}
       <div>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5 }}>
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "#1A2848", letterSpacing: "0.1em", fontWeight: 500 }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "#1A2848", letterSpacing: "0.1em", fontWeight: 500 }}>
             Ahamed Web Studio
           </span>
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "#1A2848", fontWeight: 700 }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "#1A2848", fontWeight: 700 }}>
             0.8s ⚡
           </span>
         </div>
@@ -76,8 +76,8 @@ function SpeedVisual({ visible }: { visible: boolean }) {
       </div>
 
       <p style={{
-        fontFamily: "var(--font-mono)", fontSize: 8,
-        color: "#6B6B68", letterSpacing: "0.15em",
+        fontFamily: "var(--font-mono)", fontSize: 11,
+        color: "#4E4E4B", letterSpacing: "0.12em",
         marginTop: 12, textTransform: "uppercase",
       }}>
         8× faster = more customers stay on your site
@@ -110,10 +110,10 @@ function QuoteCard({ visible }: { visible: boolean }) {
           <span style={{ fontFamily: "var(--font-display)", fontSize: 13, color: "#fff", fontWeight: 700 }}>U</span>
         </div>
         <div>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: 9, fontWeight: 500, color: "#1A2848", letterSpacing: "0.05em" }}>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500, color: "#1A2848", letterSpacing: "0.05em" }}>
             Uthpala Pathirana
           </p>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: 8, color: "#6B6B68", letterSpacing: "0.05em" }}>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "#4E4E4B", letterSpacing: "0.05em" }}>
             HEDONE Natural Skincare
           </p>
         </div>
@@ -134,10 +134,10 @@ function QuoteCard({ visible }: { visible: boolean }) {
       }}>
         <p style={{
           fontFamily: "var(--font-sans)",
-          fontSize: 12.5,
+          fontSize: 14,
           color: "#1C1C1A",
           lineHeight: 1.65,
-          fontWeight: 300,
+          fontWeight: 400,
         }}>
           "For my products I ended up doing even the packaging designs since I{" "}
           <strong style={{ fontWeight: 500 }}>couldn't find anyone with good taste.</strong>
@@ -145,7 +145,7 @@ function QuoteCard({ visible }: { visible: boolean }) {
         </p>
         {/* Timestamp + ticks */}
         <div style={{ display: "flex", alignItems: "center", gap: 4, justifyContent: "flex-end", marginTop: 6 }}>
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: 8, color: "#6B6B68" }}>5:57 AM</span>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "#4E4E4B" }}>5:57 AM</span>
           <svg width="14" height="8" viewBox="0 0 16 11" fill="#34B7F1">
             <path d="M11 1L5 7.5 1 4" stroke="#34B7F1" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
             <path d="M15 1L9 7.5" stroke="#34B7F1" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
@@ -178,8 +178,8 @@ function StatChip({ value, label, delay, visible }: { value: string; label: stri
       }}>{value}</p>
       <p style={{
         fontFamily: "var(--font-mono)",
-        fontSize: 8, letterSpacing: "0.15em",
-        color: "#6B6B68", textTransform: "uppercase",
+        fontSize: 11, letterSpacing: "0.12em",
+        color: "#4E4E4B", textTransform: "uppercase",
       }}>{label}</p>
     </div>
   );
@@ -224,7 +224,7 @@ export default function Hero() {
         ref={ref}
         style={{
           background: "var(--color-cream)",
-          paddingTop: "clamp(6rem, 14vw, 10rem)",
+          paddingTop: "clamp(6rem, 14vw, 8rem)",
           paddingBottom: "clamp(4rem, 8vw, 7rem)",
           paddingInline: "clamp(1.25rem, 6vw, 4rem)",
           position: "relative",
@@ -280,7 +280,7 @@ export default function Hero() {
               <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#25D366" }} />
               <span style={{
                 fontFamily: "var(--font-mono)",
-                fontSize: 9, letterSpacing: "0.18em",
+                fontSize: 11, letterSpacing: "0.15em",
                 color: "#1A2848", textTransform: "uppercase",
               }}>
                 Based in Colombo · Serving Sri Lanka
@@ -310,8 +310,8 @@ export default function Hero() {
             <p style={{
               fontFamily: "var(--font-sans)",
               fontSize: "clamp(1rem, 1.8vw, 1.125rem)",
-              fontWeight: 300,
-              color: "#6B6B68",
+              fontWeight: 400,
+              color: "#4E4E4B",
               lineHeight: 1.8,
               maxWidth: 480,
               marginBottom: 36,
@@ -338,7 +338,7 @@ export default function Hero() {
                 className="btn-primary btn-wa"
                 style={{
                   padding: "14px 24px",
-                  fontSize: 11, letterSpacing: "0.12em",
+                  fontSize: 13, letterSpacing: "0.1em",
                 }}
               >
                 <WaIcon size={15} />
@@ -360,7 +360,7 @@ export default function Hero() {
               opacity: visible ? 1 : 0,
               transition: "opacity 0.6s ease 0.55s",
             }}>
-              <StatChip value="12+" label="Projects done" delay={0.6} visible={visible} />
+              <StatChip value="15+" label="Projects done" delay={0.6} visible={visible} />
               <StatChip value="5★"  label="Client rating"  delay={0.68} visible={visible} />
               <StatChip value="7d"  label="Avg delivery"   delay={0.76} visible={visible} />
               <StatChip value="0.8s" label="Load time"     delay={0.84} visible={visible} />
@@ -405,7 +405,7 @@ export default function Hero() {
                   display: "flex", alignItems: "center",
                   paddingInline: 8,
                 }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 8, color: "#6B6B68", letterSpacing: "0.05em" }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "#4E4E4B", letterSpacing: "0.05em" }}>
                     yourbusiness.lk
                   </span>
                 </div>

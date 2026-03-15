@@ -42,14 +42,13 @@ export default function Footer() {
 
           {/* Brand column */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+            <div style={{ display: "flex", alignItems: "left", gap: 10, marginBottom: 12 }}>
               <img
-                src="/logo.png"
+                src="/logo-trans.png"
                 alt="Ahamed Web Studio"
-                style={{ height: 28, width: "auto", filter: "brightness(0) invert(1)", opacity: 0.9 }}
-                onError={e => { e.currentTarget.style.display = "none"; }}
+                style={{ height: 84, width: "auto", display: "block" }}
               />
-              <div>
+              {/* <div>
                 <span style={{
                   fontFamily: "var(--font-display)",
                   fontSize: 14, fontWeight: 700,
@@ -57,15 +56,15 @@ export default function Footer() {
                 }}>Ahamed Web Studio</span>
                 <span style={{
                   fontFamily: "var(--font-mono)",
-                  fontSize: 7, letterSpacing: "0.2em",
-                  color: "rgba(255,255,255,0.3)", textTransform: "uppercase",
+                  fontSize: 10, letterSpacing: "0.16em",
+                  color: "rgba(255,255,255,0.45)", textTransform: "uppercase",
                 }}>Colombo, Sri Lanka</span>
-              </div>
+              </div> */}
             </div>
             <p style={{
               fontFamily: "var(--font-sans)",
-              fontSize: 13, fontWeight: 300,
-              color: "rgba(255,255,255,0.4)",
+              fontSize: 14, fontWeight: 400,
+              color: "rgba(255,255,255,0.6)",
               lineHeight: 1.75, maxWidth: 280,
               marginBottom: 20,
             }}>
@@ -80,8 +79,8 @@ export default function Footer() {
               }} />
               <span style={{
                 fontFamily: "var(--font-mono)",
-                fontSize: 8, letterSpacing: "0.14em",
-                color: "rgba(255,255,255,0.3)",
+                fontSize: 11, letterSpacing: "0.12em",
+                color: "rgba(255,255,255,0.5)",
               }}>Colombo · {time}</span>
             </div>
           </div>
@@ -90,8 +89,8 @@ export default function Footer() {
           <div>
             <p style={{
               fontFamily: "var(--font-mono)",
-              fontSize: 8, letterSpacing: "0.2em",
-              color: "rgba(255,255,255,0.25)",
+              fontSize: 11, letterSpacing: "0.16em",
+              color: "rgba(255,255,255,0.45)",
               textTransform: "uppercase", marginBottom: 16,
             }}>Navigate</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -111,14 +110,14 @@ export default function Footer() {
                   }}
                   style={{
                     fontFamily: "var(--font-sans)",
-                    fontSize: 13, fontWeight: 300,
-                    color: "rgba(255,255,255,0.45)",
+                    fontSize: 14, fontWeight: 400,
+                    color: "rgba(255,255,255,0.65)",
                     textDecoration: "none",
                     transition: "color 0.2s",
                     width: "fit-content",
                   }}
-                  onMouseEnter={e => e.currentTarget.style.color = "rgba(255,255,255,0.85)"}
-                  onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.45)"}
+                  onMouseEnter={e => e.currentTarget.style.color = "rgba(255,255,255,0.95)"}
+                  onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.65)"}
                 >
                   {l.label}
                 </a>
@@ -130,8 +129,8 @@ export default function Footer() {
           <div>
             <p style={{
               fontFamily: "var(--font-mono)",
-              fontSize: 8, letterSpacing: "0.2em",
-              color: "rgba(255,255,255,0.25)",
+              fontSize: 11, letterSpacing: "0.16em",
+              color: "rgba(255,255,255,0.45)",
               textTransform: "uppercase", marginBottom: 16,
             }}>Get in touch</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 20 }}>
@@ -158,8 +157,8 @@ export default function Footer() {
                   </svg>
                 </div>
                 <div>
-                  <p style={{ fontFamily: "var(--font-mono)", fontSize: 8, letterSpacing: "0.1em", color: "rgba(255,255,255,0.25)", marginBottom: 1 }}>WhatsApp</p>
-                  <p style={{ fontFamily: "var(--font-sans)", fontSize: 13, color: "rgba(255,255,255,0.6)", fontWeight: 300 }}>+94 71 741 1188</p>
+                  <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", color: "rgba(255,255,255,0.45)", marginBottom: 1 }}>WhatsApp</p>
+                  <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "rgba(255,255,255,0.8)", fontWeight: 400 }}>+94 71 741 1188</p>
                 </div>
               </a>
 
@@ -184,8 +183,8 @@ export default function Footer() {
                   </svg>
                 </div>
                 <div>
-                  <p style={{ fontFamily: "var(--font-mono)", fontSize: 8, letterSpacing: "0.1em", color: "rgba(255,255,255,0.25)", marginBottom: 1 }}>Email</p>
-                  <p style={{ fontFamily: "var(--font-sans)", fontSize: 13, color: "rgba(255,255,255,0.6)", fontWeight: 300 }}>hello@ahamedwebstudio.com</p>
+                  <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", color: "rgba(255,255,255,0.45)", marginBottom: 1 }}>Email</p>
+                  <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "rgba(255,255,255,0.8)", fontWeight: 400 }}>hello@ahamedwebstudio.com</p>
                 </div>
               </a>
             </div>
@@ -202,19 +201,19 @@ export default function Footer() {
                 border: "1px solid rgba(255,255,255,0.1)",
                 borderRadius: 6,
                 fontFamily: "var(--font-mono)",
-                fontSize: 8, letterSpacing: "0.12em",
-                color: "rgba(255,255,255,0.35)",
+                fontSize: 11, letterSpacing: "0.1em",
+                color: "rgba(255,255,255,0.5)",
                 textDecoration: "none",
                 textTransform: "uppercase",
                 transition: "border-color 0.2s, color 0.2s",
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)";
-                e.currentTarget.style.color = "rgba(255,255,255,0.65)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.35)";
+                e.currentTarget.style.color = "rgba(255,255,255,0.85)";
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
-                e.currentTarget.style.color = "rgba(255,255,255,0.35)";
+                e.currentTarget.style.color = "rgba(255,255,255,0.5)";
               }}
             >
               ahamedwebstudio.com
@@ -234,15 +233,15 @@ export default function Footer() {
         }}>
           <p style={{
             fontFamily: "var(--font-mono)",
-            fontSize: 8, letterSpacing: "0.14em",
-            color: "rgba(255,255,255,0.2)",
+            fontSize: 11, letterSpacing: "0.12em",
+            color: "rgba(255,255,255,0.4)",
           }}>
             © {year} Ahamed Web Studio · All rights reserved
           </p>
           <p style={{
             fontFamily: "var(--font-mono)",
-            fontSize: 8, letterSpacing: "0.14em",
-            color: "rgba(255,255,255,0.2)",
+            fontSize: 11, letterSpacing: "0.12em",
+            color: "rgba(255,255,255,0.4)",
           }}>
             Built by Ahamed Web Studio · Colombo 🇱🇰
           </p>

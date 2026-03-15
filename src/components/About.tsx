@@ -78,8 +78,8 @@ function Stat({ value, label, visible, delay }: { value: string; label: string; 
       }}>{value}</p>
       <p style={{
         fontFamily: "var(--font-mono)",
-        fontSize: 8, letterSpacing: "0.16em",
-        color: "#6B6B68", textTransform: "uppercase",
+        fontSize: 11, letterSpacing: "0.14em",
+        color: "#4E4E4B", textTransform: "uppercase",
       }}>{label}</p>
     </div>
   );
@@ -145,17 +145,7 @@ export default function About() {
                 background: "#E8E4DC",
                 aspectRatio: "4/5",
               }}>
-                <img
-                  src="/najman.jpeg"
-                  alt="Najman — Ahamed Web Studio"
-                  style={{
-                    width: "100%", height: "100%",
-                    objectFit: "cover", objectPosition: "top center",
-                    display: "block",
-                  }}
-                  onError={e => { e.currentTarget.style.display = "none"; }}
-                />
-                {/* Fallback gradient when no photo */}
+                {/* Fallback gradient behind the photo */}
                 <div style={{
                   position: "absolute", inset: 0,
                   background: "linear-gradient(160deg, #1A2848 0%, #243660 50%, #F25C43 100%)",
@@ -167,6 +157,18 @@ export default function About() {
                     color: "rgba(255,255,255,0.15)",
                   }}>N</span>
                 </div>
+                <img
+                  src="/najman.jpeg"
+                  alt="Najman — Ahamed Web Studio"
+                  style={{
+                    position: "absolute", inset: 0,
+                    width: "100%", height: "100%",
+                    objectFit: "cover", objectPosition: "top center",
+                    display: "block",
+                    zIndex: 1,
+                  }}
+                  onError={e => { e.currentTarget.style.display = "none"; }}
+                />
               </div>
 
               {/* Floating badge — currently building */}
@@ -189,14 +191,14 @@ export default function About() {
                 <div>
                   <p style={{
                     fontFamily: "var(--font-mono)",
-                    fontSize: 8, letterSpacing: "0.14em",
+                    fontSize: 11, letterSpacing: "0.12em",
                     color: "#1A2848", textTransform: "uppercase",
                     lineHeight: 1.4,
                   }}>Available now</p>
                   <p style={{
                     fontFamily: "var(--font-mono)",
-                    fontSize: 7, letterSpacing: "0.1em",
-                    color: "#6B6B68",
+                    fontSize: 10, letterSpacing: "0.1em",
+                    color: "#4E4E4B",
                   }}>Colombo, Sri Lanka</p>
                 </div>
               </div>
@@ -214,7 +216,7 @@ export default function About() {
               <div style={{ width: 1, background: "#E5E3DD" }} />
               <Stat value="5★" label="Rating" visible={entered} delay={0.5} />
               <div style={{ width: 1, background: "#E5E3DD" }} />
-              <Stat value="2+" label="Countries" visible={entered} delay={0.6} />
+              <Stat value="3+" label="Countries" visible={entered} delay={0.6} />
             </div>
           </div>
 
@@ -247,8 +249,8 @@ export default function About() {
 
             <p style={{
               fontFamily: "var(--font-sans)",
-              fontSize: 15, fontWeight: 300,
-              color: "#6B6B68", lineHeight: 1.85,
+              fontSize: 16, fontWeight: 400,
+              color: "#4E4E4B", lineHeight: 1.8,
               marginBottom: 20,
             }}>
               I'm a web developer based in Colombo. I started Ahamed Web Studio because I kept seeing Sri Lankan businesses settle for slow, template-looking websites that they were embarrassed to share — when they deserved much better.
@@ -256,8 +258,8 @@ export default function About() {
 
             <p style={{
               fontFamily: "var(--font-sans)",
-              fontSize: 15, fontWeight: 300,
-              color: "#6B6B68", lineHeight: 1.85,
+              fontSize: 16, fontWeight: 400,
+              color: "#4E4E4B", lineHeight: 1.8,
               marginBottom: 20,
             }}>
               I build for international agencies in the UK and Dubai — and I bring that same level of craft to every local project. The difference is you pay Sri Lankan prices and you talk to me directly on WhatsApp.
@@ -265,8 +267,8 @@ export default function About() {
 
             <p style={{
               fontFamily: "var(--font-sans)",
-              fontSize: 15, fontWeight: 300,
-              color: "#6B6B68", lineHeight: 1.85,
+              fontSize: 16, fontWeight: 400,
+              color: "#4E4E4B", lineHeight: 1.8,
               marginBottom: 32,
             }}>
               Fifteen projects in. Every single client has been happy with what I delivered. I plan to keep it that way.
@@ -298,8 +300,8 @@ export default function About() {
                 }}>Ahamed Najman</p>
                 <p style={{
                   fontFamily: "var(--font-mono)",
-                  fontSize: 8, letterSpacing: "0.15em",
-                  color: "#6B6B68", textTransform: "uppercase",
+                  fontSize: 11, letterSpacing: "0.12em",
+                  color: "#4E4E4B", textTransform: "uppercase",
                 }}>Founder · Ahamed Web Studio · Colombo</p>
               </div>
               <a
@@ -313,7 +315,7 @@ export default function About() {
                   background: "#25D366",
                   borderRadius: 6,
                   fontFamily: "var(--font-mono)",
-                  fontSize: 9, letterSpacing: "0.12em",
+                  fontSize: 12, letterSpacing: "0.1em",
                   color: "#fff", textDecoration: "none",
                   textTransform: "uppercase", flexShrink: 0,
                   boxShadow: "0 4px 16px rgba(37,211,102,0.3)",
@@ -344,8 +346,8 @@ export default function About() {
         }}>
           <p style={{
             fontFamily: "var(--font-mono)",
-            fontSize: 8, letterSpacing: "0.22em",
-            color: "#6B6B68", textTransform: "uppercase",
+            fontSize: 11, letterSpacing: "0.18em",
+            color: "#4E4E4B", textTransform: "uppercase",
             marginBottom: 20, textAlign: "center",
           }}>Why clients come back</p>
 
@@ -380,13 +382,13 @@ export default function About() {
                 <div>
                   <p style={{
                     fontFamily: "var(--font-display)",
-                    fontSize: 14, fontWeight: 700,
+                    fontSize: 15, fontWeight: 700,
                     color: "#1C1C1A", marginBottom: 5, lineHeight: 1.3,
                   }}>{t.title}</p>
                   <p style={{
                     fontFamily: "var(--font-sans)",
-                    fontSize: 12.5, fontWeight: 300,
-                    color: "#6B6B68", lineHeight: 1.65,
+                    fontSize: 14, fontWeight: 400,
+                    color: "#4E4E4B", lineHeight: 1.65,
                   }}>{t.body}</p>
                 </div>
               </div>

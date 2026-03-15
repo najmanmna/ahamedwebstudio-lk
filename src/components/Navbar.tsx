@@ -49,10 +49,10 @@ export default function Navbar() {
         .nav-link {
           position: relative;
           font-family: var(--font-mono);
-          font-size: 9px;
-          letter-spacing: 0.16em;
+          font-size: 11px;
+          letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: #6B6B68;
+          color: #4E4E4B;
           text-decoration: none;
           padding: 4px 0;
           transition: color 0.2s;
@@ -117,24 +117,8 @@ export default function Navbar() {
             <img
               src="/logo.png"
               alt="Ahamed Web Studio"
-              style={{ height: 32, width: "auto", display: "block" }}
-              onError={e => { e.currentTarget.style.display = "none"; }}
+              style={{ height: 62, width: "auto", display: "block" }}
             />
-            {/* Fallback wordmark */}
-            <div>
-              <span style={{
-                fontFamily: "var(--font-display)",
-                fontSize: 15, fontWeight: 700,
-                color: "#1C1C1A", letterSpacing: "-0.01em",
-                display: "block", lineHeight: 1.1,
-              }}>Ahamed</span>
-              <span style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: 7, letterSpacing: "0.22em",
-                color: "#6B6B68", textTransform: "uppercase",
-                display: "block",
-              }}>Web Studio</span>
-            </div>
           </a>
 
           {/* ── Desktop nav ── */}
@@ -167,7 +151,7 @@ export default function Navbar() {
                 background: "#25D366",
                 borderRadius: 6,
                 fontFamily: "var(--font-mono)",
-                fontSize: 9, letterSpacing: "0.13em",
+                fontSize: 12, letterSpacing: "0.11em",
                 color: "#fff", textDecoration: "none",
                 textTransform: "uppercase",
                 transition: "background 0.2s, transform 0.2s",
@@ -255,8 +239,8 @@ export default function Navbar() {
         }}>
           <span style={{
             fontFamily: "var(--font-mono)",
-            fontSize: 9, letterSpacing: "0.2em",
-            color: "#6B6B68", textTransform: "uppercase",
+            fontSize: 12, letterSpacing: "0.16em",
+            color: "#4E4E4B", textTransform: "uppercase",
           }}>Menu</span>
           <button
             onClick={() => setMenuOpen(false)}
@@ -288,7 +272,7 @@ export default function Navbar() {
               }}
             >
               {l.label}
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "#C5C3BD", letterSpacing: "0.15em" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "#C5C3BD", letterSpacing: "0.12em" }}>
                 0{i + 1}
               </span>
             </a>
@@ -307,7 +291,7 @@ export default function Navbar() {
               background: "#25D366",
               borderRadius: 8,
               fontFamily: "var(--font-mono)",
-              fontSize: 10, letterSpacing: "0.14em",
+              fontSize: 13, letterSpacing: "0.12em",
               color: "#fff", textDecoration: "none",
               textTransform: "uppercase",
               boxShadow: "0 4px 20px rgba(37,211,102,0.3)",

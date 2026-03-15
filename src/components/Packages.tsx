@@ -170,7 +170,7 @@ function PackageCard({ pkg, index, entered }: { pkg: Package; index: number; ent
           background: "#F25C43",
           borderRadius: 999,
           fontFamily: "var(--font-mono)",
-          fontSize: 8, letterSpacing: "0.18em",
+          fontSize: 11, letterSpacing: "0.15em",
           color: "#fff", textTransform: "uppercase",
         }}>
           Most Popular
@@ -191,8 +191,8 @@ function PackageCard({ pkg, index, entered }: { pkg: Package; index: number; ent
         <div style={{ marginBottom: 22 }}>
           <p style={{
             fontFamily: "var(--font-mono)",
-            fontSize: 8, letterSpacing: "0.2em",
-            color: pkg.highlight ? "rgba(255,255,255,0.5)" : "#6B6B68",
+            fontSize: 11, letterSpacing: "0.16em",
+            color: pkg.highlight ? "rgba(255,255,255,0.65)" : "#4E4E4B",
             textTransform: "uppercase", marginBottom: 6,
           }}>Package</p>
           <h3 style={{
@@ -203,8 +203,8 @@ function PackageCard({ pkg, index, entered }: { pkg: Package; index: number; ent
           }}>{pkg.name}</h3>
           <p style={{
             fontFamily: "var(--font-sans)",
-            fontSize: 13, fontWeight: 300,
-            color: pkg.highlight ? "rgba(255,255,255,0.6)" : "#6B6B68",
+            fontSize: 14, fontWeight: 400,
+            color: pkg.highlight ? "rgba(255,255,255,0.75)" : "#4E4E4B",
             lineHeight: 1.6,
           }}>{pkg.tagline}</p>
         </div>
@@ -219,15 +219,15 @@ function PackageCard({ pkg, index, entered }: { pkg: Package; index: number; ent
         }}>
           <p style={{
             fontFamily: "var(--font-mono)",
-            fontSize: 8, letterSpacing: "0.15em",
-            color: pkg.highlight ? "rgba(255,255,255,0.45)" : "#6B6B68",
+            fontSize: 11, letterSpacing: "0.12em",
+            color: pkg.highlight ? "rgba(255,255,255,0.6)" : "#4E4E4B",
             textTransform: "uppercase", marginBottom: 4,
           }}>{pkg.priceNote}</p>
           <div style={{ display: "flex", alignItems: "baseline", gap: 6 }}>
             <span style={{
               fontFamily: "var(--font-mono)",
-              fontSize: 11, fontWeight: 500,
-              color: pkg.highlight ? "rgba(255,255,255,0.5)" : "#6B6B68",
+              fontSize: 13, fontWeight: 500,
+              color: pkg.highlight ? "rgba(255,255,255,0.65)" : "#4E4E4B",
               letterSpacing: "0.05em",
             }}>LKR</span>
             <span style={{
@@ -252,8 +252,8 @@ function PackageCard({ pkg, index, entered }: { pkg: Package; index: number; ent
             </svg>
             <span style={{
               fontFamily: "var(--font-mono)",
-              fontSize: 8, letterSpacing: "0.14em",
-              color: pkg.highlight ? "rgba(255,255,255,0.6)" : pkg.timelineColor,
+              fontSize: 11, letterSpacing: "0.12em",
+              color: pkg.highlight ? "rgba(255,255,255,0.75)" : pkg.timelineColor,
               textTransform: "uppercase",
             }}>{pkg.timeline} delivery</span>
           </div>
@@ -271,9 +271,9 @@ function PackageCard({ pkg, index, entered }: { pkg: Package; index: number; ent
               {f.included ? <Check color={pkg.highlight ? "#F25C43" : pkg.color} /> : <Cross />}
               <span style={{
                 fontFamily: "var(--font-sans)",
-                fontSize: 13, fontWeight: 300,
+                fontSize: 14, fontWeight: 400,
                 color: f.included
-                  ? (pkg.highlight ? "rgba(255,255,255,0.85)" : "#1C1C1A")
+                  ? (pkg.highlight ? "rgba(255,255,255,0.9)" : "#1C1C1A")
                   : "#C5C3BD",
                 lineHeight: 1.5,
                 textDecoration: f.included ? "none" : "none",
@@ -299,8 +299,8 @@ function PackageCard({ pkg, index, entered }: { pkg: Package; index: number; ent
               </svg>
               <span style={{
                 fontFamily: "var(--font-mono)",
-                fontSize: 8, letterSpacing: "0.12em",
-                color: pkg.cms.included ? "#F25C43" : (pkg.highlight ? "rgba(255,255,255,0.55)" : "#6B6B68"),
+                fontSize: 11, letterSpacing: "0.1em",
+                color: pkg.cms.included ? "#F25C43" : (pkg.highlight ? "rgba(255,255,255,0.7)" : "#4E4E4B"),
                 textTransform: "uppercase",
               }}>
                 Content editor (CMS)
@@ -308,14 +308,14 @@ function PackageCard({ pkg, index, entered }: { pkg: Package; index: number; ent
             </div>
             {pkg.cms.included ? (
               <span style={{
-                fontFamily: "var(--font-mono)", fontSize: 8,
+                fontFamily: "var(--font-mono)", fontSize: 11,
                 color: "#F25C43", letterSpacing: "0.1em",
                 textTransform: "uppercase", fontWeight: 500,
               }}>Included</span>
             ) : (
               <span style={{
-                fontFamily: "var(--font-mono)", fontSize: 8,
-                color: pkg.highlight ? "rgba(255,255,255,0.45)" : "#C8A96E",
+                fontFamily: "var(--font-mono)", fontSize: 11,
+                color: pkg.highlight ? "rgba(255,255,255,0.6)" : "#C8A96E",
                 letterSpacing: "0.1em",
               }}>+ LKR {pkg.cms.price}</span>
             )}
@@ -330,14 +330,14 @@ function PackageCard({ pkg, index, entered }: { pkg: Package; index: number; ent
         }}>
           <p style={{
             fontFamily: "var(--font-mono)",
-            fontSize: 7, letterSpacing: "0.18em",
-            color: pkg.highlight ? "rgba(255,255,255,0.35)" : "#6B6B68",
+            fontSize: 10, letterSpacing: "0.15em",
+            color: pkg.highlight ? "rgba(255,255,255,0.5)" : "#4E4E4B",
             textTransform: "uppercase", marginBottom: 4,
           }}>Ideal for</p>
           <p style={{
             fontFamily: "var(--font-sans)",
-            fontSize: 12, fontWeight: 300,
-            color: pkg.highlight ? "rgba(255,255,255,0.6)" : "#6B6B68",
+            fontSize: 13, fontWeight: 400,
+            color: pkg.highlight ? "rgba(255,255,255,0.75)" : "#4E4E4B",
             lineHeight: 1.5,
           }}>{pkg.ideal}</p>
         </div>
@@ -354,7 +354,7 @@ function PackageCard({ pkg, index, entered }: { pkg: Package; index: number; ent
             color: "#fff",
             borderRadius: 6,
             fontFamily: "var(--font-mono)",
-            fontSize: 9, letterSpacing: "0.14em",
+            fontSize: 12, letterSpacing: "0.12em",
             textTransform: "uppercase", textDecoration: "none",
             fontWeight: 500,
             transition: "background 0.25s, transform 0.2s",
@@ -381,6 +381,7 @@ function PackageCard({ pkg, index, entered }: { pkg: Package; index: number; ent
 export default function Packages() {
   const ref = useRef(null);
   const [entered, setEntered] = useState(false);
+  const [mobileActive, setMobileActive] = useState(PACKAGES.findIndex(p => p.highlight));
 
   useEffect(() => {
     const obs = new IntersectionObserver(([e]) => {
@@ -428,12 +429,57 @@ export default function Packages() {
           </h2>
           <p style={{
             fontFamily: "var(--font-sans)",
-            fontSize: 15, fontWeight: 300,
-            color: "#6B6B68", lineHeight: 1.75,
+            fontSize: 16, fontWeight: 400,
+            color: "#4E4E4B", lineHeight: 1.75,
             maxWidth: 440, margin: "0 auto",
           }}>
             Every project is quoted individually — but these starting prices give you a clear idea of what to expect. No hidden fees, no scope creep.
           </p>
+        </div>
+
+        {/* Mobile tab switcher — hidden on desktop via CSS */}
+        <div className="pkg-tabs" style={{
+          display: "none",
+          gap: 4,
+          marginBottom: 20,
+          background: "#fff",
+          border: "1px solid #E5E3DD",
+          borderRadius: 10,
+          padding: 5,
+        }}>
+          {PACKAGES.map((pkg, i) => (
+            <button
+              key={pkg.id}
+              onClick={() => setMobileActive(i)}
+              style={{
+                all: "unset",
+                flex: 1,
+                padding: "10px 8px",
+                borderRadius: 7,
+                fontFamily: "var(--font-mono)",
+                fontSize: 9, letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                textAlign: "center",
+                cursor: "pointer",
+                display: "flex", flexDirection: "column",
+                alignItems: "center", gap: 3,
+                background: mobileActive === i ? (pkg.color + "12") : "transparent",
+                color: mobileActive === i ? pkg.color : "#6B6B68",
+                boxShadow: mobileActive === i ? `0 1px 6px ${pkg.color}18` : "none",
+                border: `1px solid ${mobileActive === i ? pkg.color + "33" : "transparent"}`,
+                transition: "all 0.2s ease",
+              }}
+            >
+              {["Portfolio", "Business", "Store"][i]}
+              {pkg.highlight && (
+                <span style={{
+                  fontSize: 7, letterSpacing: "0.14em",
+                  color: mobileActive === i ? pkg.color : "#C5C3BD",
+                  textTransform: "uppercase",
+                }}>Popular</span>
+              )}
+            </button>
+          ))}
         </div>
 
         {/* Cards grid */}
@@ -444,7 +490,13 @@ export default function Packages() {
           alignItems: "start",
         }} className="packages-grid">
           {PACKAGES.map((pkg, i) => (
-            <PackageCard key={pkg.id} pkg={pkg} index={i} entered={entered} />
+            <div
+              key={pkg.id}
+              style={{ display: "contents" }}
+              className={`pkg-card-wrap${mobileActive === i ? " pkg-active" : ""}`}
+            >
+              <PackageCard pkg={pkg} index={i} entered={entered} />
+            </div>
           ))}
         </div>
 
@@ -472,8 +524,8 @@ export default function Packages() {
               <span style={{ fontSize: 16, flexShrink: 0 }}>{note.icon}</span>
               <p style={{
                 fontFamily: "var(--font-sans)",
-                fontSize: 12.5, fontWeight: 300,
-                color: "#6B6B68", lineHeight: 1.6,
+                fontSize: 14, fontWeight: 400,
+                color: "#4E4E4B", lineHeight: 1.6,
               }}>{note.text}</p>
             </div>
           ))}
@@ -482,9 +534,12 @@ export default function Packages() {
 
       <style>{`
         @media (max-width: 768px) {
-          .packages-grid { grid-template-columns: 1fr !important; }
+          .packages-grid { display: block !important; }
           .notes-grid { grid-template-columns: 1fr !important; }
-          .packages-grid > div { transform: none !important; }
+          .pkg-tabs { display: flex !important; }
+          .pkg-card-wrap { display: none !important; }
+          .pkg-card-wrap.pkg-active { display: block !important; }
+          .pkg-card-wrap.pkg-active > div { transform: none !important; }
         }
         @media (min-width: 769px) and (max-width: 1024px) {
           .packages-grid { grid-template-columns: repeat(2,1fr) !important; }

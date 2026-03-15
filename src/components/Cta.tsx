@@ -99,8 +99,8 @@ export default function CTA() {
             <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#25D366" }} />
             <span style={{
               fontFamily: "var(--font-mono)",
-              fontSize: 9, letterSpacing: "0.18em",
-              color: "rgba(255,255,255,0.6)", textTransform: "uppercase",
+              fontSize: 12, letterSpacing: "0.15em",
+              color: "rgba(255,255,255,0.75)", textTransform: "uppercase",
             }}>Ready to start your project</span>
           </div>
 
@@ -130,8 +130,8 @@ export default function CTA() {
           <p style={{
             fontFamily: "var(--font-sans)",
             fontSize: "clamp(1rem,1.8vw,1.125rem)",
-            fontWeight: 300,
-            color: "rgba(255,255,255,0.55)",
+            fontWeight: 400,
+            color: "rgba(255,255,255,0.7)",
             lineHeight: 1.8,
             maxWidth: 480,
             margin: "0 auto 40px",
@@ -164,7 +164,7 @@ export default function CTA() {
                 color: "#fff",
                 borderRadius: 8,
                 fontFamily: "var(--font-mono)",
-                fontSize: 11, letterSpacing: "0.14em",
+                fontSize: 13, letterSpacing: "0.12em",
                 textTransform: "uppercase",
                 textDecoration: "none",
                 fontWeight: 500,
@@ -199,8 +199,8 @@ export default function CTA() {
                 <span style={{ fontSize: 14 }}>{item.icon}</span>
                 <span style={{
                   fontFamily: "var(--font-mono)",
-                  fontSize: 9, letterSpacing: "0.14em",
-                  color: "rgba(255,255,255,0.4)",
+                  fontSize: 12, letterSpacing: "0.12em",
+                  color: "rgba(255,255,255,0.6)",
                   textTransform: "uppercase",
                 }}>{item.text}</span>
               </div>
@@ -242,8 +242,8 @@ export default function CTA() {
               </svg>
               <span style={{
                 fontFamily: "var(--font-mono)",
-                fontSize: 9, letterSpacing: "0.12em",
-                color: "rgba(255,255,255,0.4)",
+                fontSize: 12, letterSpacing: "0.1em",
+                color: "rgba(255,255,255,0.65)",
               }}>+94 71 741 1188</span>
             </a>
             <a
@@ -261,8 +261,8 @@ export default function CTA() {
               </svg>
               <span style={{
                 fontFamily: "var(--font-mono)",
-                fontSize: 9, letterSpacing: "0.12em",
-                color: "rgba(255,255,255,0.4)",
+                fontSize: 12, letterSpacing: "0.1em",
+                color: "rgba(255,255,255,0.65)",
               }}>hello@ahamedwebstudio.com</span>
             </a>
           </div>
@@ -271,4 +271,4 @@ export default function CTA() {
       </section>
     </>
   );
-}
+}``

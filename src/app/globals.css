@@ -12,7 +12,7 @@
   --color-gold:       #C8A96E;
   --color-gold-light: #D9BC85;
   --color-ink:        #1C1C1A;
-  --color-ink-muted:  #6B6B68;
+  --color-ink-muted:  #4E4E4B;
   --color-border:     #E5E3DD;
   --color-white:      #FFFFFF;
 
@@ -60,7 +60,7 @@ body {
   background-color: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -98,16 +98,16 @@ h1, h2, h3, h4 {
 
 .text-label {
   font-family: var(--font-mono);
-  font-size: 0.625rem;
-  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-ink-muted);
 }
 
 .text-body {
   font-family: var(--font-sans);
-  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
-  font-weight: 300;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 400;
   line-height: 1.8;
   color: var(--color-ink-muted);
 }
@@ -135,8 +135,8 @@ h1, h2, h3, h4 {
   background: rgba(26, 40, 72, 0.07);
   border: 1px solid rgba(26, 40, 72, 0.12);
   font-family: var(--font-mono);
-  font-size: 0.625rem;
-  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--color-navy);
 }
@@ -157,8 +157,8 @@ h1, h2, h3, h4 {
 }
 .section-label span {
   font-family: var(--font-mono);
-  font-size: 0.625rem;
-  letter-spacing: 0.22em;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-navy);
 }
@@ -172,9 +172,9 @@ h1, h2, h3, h4 {
   background: var(--color-navy);
   color: var(--color-white);
   font-family: var(--font-mono);
-  font-size: 0.6875rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-decoration: none;
   border-radius: var(--radius-sm);
   border: none;
