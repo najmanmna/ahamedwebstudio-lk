@@ -320,7 +320,7 @@ export default function Hero() {
               transition: "opacity 0.6s ease 0.32s, transform 0.6s ease 0.32s",
             }}>
               We build fast, beautiful, professional websites for Sri Lankan
-              businesses — with international design quality and prices that make sense locally.
+              businesses, with international design quality and prices that make sense locally.
             </p>
 
             {/* CTAs */}

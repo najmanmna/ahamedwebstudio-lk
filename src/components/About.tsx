@@ -253,7 +253,7 @@ export default function About() {
               color: "#4E4E4B", lineHeight: 1.8,
               marginBottom: 20,
             }}>
-              I'm a web developer based in Colombo. I started Ahamed Web Studio because I kept seeing Sri Lankan businesses settle for slow, template-looking websites that they were embarrassed to share — when they deserved much better.
+              I'm a web developer based in Colombo. I started Ahamed Web Studio because I kept seeing Sri Lankan businesses settle for slow, template-looking websites they were embarrassed to share, when they deserved so much better.
             </p>
 
             <p style={{
@@ -262,7 +262,7 @@ export default function About() {
               color: "#4E4E4B", lineHeight: 1.8,
               marginBottom: 20,
             }}>
-              I build for international agencies in the UK and Dubai — and I bring that same level of craft to every local project. The difference is you pay Sri Lankan prices and you talk to me directly on WhatsApp.
+              I build for international agencies in the UK and Dubai, and I bring that same level of craft to every local project. You pay Sri Lankan prices and talk to me directly on WhatsApp.
             </p>
 
             <p style={{

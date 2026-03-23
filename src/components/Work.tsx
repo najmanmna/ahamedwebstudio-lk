@@ -24,7 +24,7 @@ const PROJECTS: Project[] = [
     name: "Elvyn Store",
     category: "E-Commerce",
     location: "Colombo, LK",
-    story: "Sajid needed a proper online store — not just an Instagram page. We built a full Next.js storefront with product catalogue, cart, and mobile-first checkout. Delivered in 7 days.",
+    story: "Sajid needed a proper online store, not just an Instagram page. We built a full Next.js storefront with product catalogue, cart, and mobile-first checkout. Delivered in 7 days.",
     result: "100/100 PageSpeed. Client left a 5-star review.",
     quote: "Ahamed is fully committed to delivering high-performance assets on time without compromising quality.",
     quoteName: "Sajid Ifham",
@@ -38,7 +38,7 @@ const PROJECTS: Project[] = [
     name: "HEDONE Skincare",
     category: "Brand Website",
     location: "Sri Lanka",
-    story: "Uthpala had been designing her own packaging because no one locally had the taste to match her brand. We built a website that matched the elegance of her products — clean, warm, editorial.",
+    story: "Uthpala had been designing her own packaging because no one locally had the taste to match her brand. We built a website that matched the elegance of her products. Clean, warm, editorial.",
     result: "Client's jaw dropped on first preview.",
     quote: "For the first time someone nailed it and that's you!!!",
     quoteName: "Uthpala Pathirana",
@@ -63,10 +63,10 @@ const PROJECTS: Project[] = [
   },
   {
     id: "04",
-    name: "Ambrins — 3 Stores",
+    name: "Ambrins: 3 Stores",
     category: "E-Commerce Suite",
     location: "Colombo, LK",
-    story: "One client, three separate product lines, three distinct brand identities — all launched within a single month. Each store had its own look, its own inventory logic, and its own customer experience.",
+    story: "One client, three separate product lines, three distinct brand identities. All launched within a single month. Each store had its own look, its own inventory logic, and its own customer experience.",
     result: "Three live stores. One month. Zero compromises.",
     quote: "The transition to our new digital engine was seamless.",
     quoteName: "Ambrins Client",
@@ -316,8 +316,8 @@ export default function Work() {
               fontSize: "clamp(2rem,4vw,3rem)",
               fontWeight: 700, color: "#1C1C1A", lineHeight: 1.1,
             }}>
-              Real projects.<br />
-              <span style={{ color: "#1A2848" }}>Real Sri Lankan businesses.</span>
+              Work we've done.<br />
+              <span style={{ color: "#1A2848" }}>Clients we've built for.</span>
             </h2>
           </div>
           <p style={{
@@ -518,7 +518,7 @@ export default function Work() {
                   fontFamily: "var(--font-mono)",
                   fontSize: 9, letterSpacing: "0.12em",
                   color: "#1A2848",
-                }}>— {project.quoteName}</p>
+                }}>/ {project.quoteName}</p>
               </div>
             </div>
 

@@ -30,7 +30,7 @@ const PACKAGES: Package[] = [
   {
     id: "portfolio",
     name: "Portfolio & Info Site",
-    tagline: "One page or up to five — a site that tells your story and builds trust.",
+    tagline: "One page or up to five. A site that tells your story and builds trust.",
     price: "30,000",
     priceNote: "starting from",
     currency: "LKR",
@@ -43,7 +43,7 @@ const PACKAGES: Package[] = [
     features: [
       { text: "1–5 pages (scoped on WhatsApp before quoting)", included: true },
       { text: "Mobile-first, fully responsive", included: true },
-      { text: "Custom design — no templates", included: true },
+      { text: "Custom design, no templates", included: true },
       { text: "Contact form with WhatsApp link", included: true },
       { text: "Google Maps integration", included: true },
       { text: "PageSpeed 90+ guaranteed", included: true },
@@ -72,7 +72,7 @@ const PACKAGES: Package[] = [
     features: [
       { text: "Up to 10 pages", included: true },
       { text: "Mobile-first, fully responsive", included: true },
-      { text: "Custom design — no templates", included: true },
+      { text: "Custom design, no templates", included: true },
       { text: "Blog / news section", included: true },
       { text: "Team & careers pages", included: true },
       { text: "Advanced contact & booking forms", included: true },
@@ -102,10 +102,10 @@ const PACKAGES: Package[] = [
     features: [
       { text: "Full product catalogue with categories", included: true },
       { text: "Mobile-first, fully responsive", included: true },
-      { text: "Custom design — no templates", included: true },
+      { text: "Custom design, no templates", included: true },
       { text: "Shopping cart & checkout", included: true },
       { text: "Payment gateway integration", included: true },
-      { text: "Product management dashboard — add & edit anytime", included: true },
+      { text: "Product management dashboard, add and edit anytime", included: true },
       { text: "PageSpeed 90+ guaranteed", included: true },
       { text: "Domain connection", included: true },
       { text: "1 round of revisions", included: true },
@@ -433,7 +433,7 @@ export default function Packages() {
             color: "#4E4E4B", lineHeight: 1.75,
             maxWidth: 440, margin: "0 auto",
           }}>
-            Every project is quoted individually — but these starting prices give you a clear idea of what to expect. No hidden fees, no scope creep.
+            Every project is quoted individually, but these starting prices give you a clear idea of what to expect. No hidden fees, no scope creep.
           </p>
         </div>
 
@@ -511,7 +511,7 @@ export default function Packages() {
         }} className="notes-grid">
           {[
             { icon: "💳", text: "50% advance to start · 50% on delivery" },
-            { icon: "🔄", text: "Revisions included — no extra charges for included rounds" },
+            { icon: "🔄", text: "Revisions included, no extra charges for included rounds" },
             { icon: "📞", text: "Not sure which package? WhatsApp us and we'll advise honestly" },
           ].map((note, i) => (
             <div key={i} style={{

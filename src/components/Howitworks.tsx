@@ -20,7 +20,7 @@ const STEPS = [
     number: "01",
     day: "Day 1",
     title: "You message us on WhatsApp",
-    body: "Tell us what you need — a new store, a portfolio, a business site. No forms, no calls, no waiting. Just send us a message and we'll reply within a few hours with questions and a clear quote.",
+    body: "Tell us what you need: a new store, a portfolio, a business site. No forms, no calls, no waiting. Just send us a message and we'll reply within a few hours with questions and a clear quote.",
     detail: "We'll ask about your business, your target customers, any sites you like the look of, and your timeline. That's it.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -34,8 +34,8 @@ const STEPS = [
     number: "02",
     day: "Day 1–2",
     title: "We agree on a plan and you pay the advance",
-    body: "Once we're aligned on scope, design direction, and price — we send a simple invoice. 50% advance to start, 50% on delivery. No surprises.",
-    detail: "Bank transfer, direct — straightforward. We start building the same day your advance lands.",
+    body: "Once we agree on scope, design direction and price, we send a simple invoice. 50% advance to start, 50% on delivery. No surprises.",
+    detail: "Bank transfer, direct. Straightforward. We start building the same day your advance lands.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="5" width="20" height="14" rx="2"/>
@@ -49,8 +49,8 @@ const STEPS = [
     number: "03",
     day: "Day 3–5 / Day 5–10",
     title: "We build and send you a live preview",
-    body: "We design and develop your site — real code, real design, built specifically for your brand. You get a live preview link (not a screenshot) so you can click through the actual site on your phone.",
-    detail: "Portfolio & info sites: preview by Day 5. E-commerce stores: preview by Day 10 — product setup, payment gateway, and mobile checkout all need proper time. This is where most clients say 'wow'.",
+    body: "We design and develop your site. Real code, real design, built specifically for your brand. You get a live preview link (not a screenshot) so you can click through the actual site on your phone.",
+    detail: "Portfolio & info sites: preview by Day 5. E-commerce stores: preview by Day 10. Product setup, payment gateway, and mobile checkout all need proper time. This is where most clients say 'wow'.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="16 18 22 12 16 6"/>
@@ -64,8 +64,8 @@ const STEPS = [
     number: "04",
     day: "Day 6–7 / Day 11–14",
     title: "You review, we refine, we launch",
-    body: "One round of revisions included — tell us anything you want changed. Once you're happy, we connect your domain and go live. We stay available for 7 days after launch for any small tweaks.",
-    detail: "Portfolio & info sites go live by Day 7. E-commerce stores by Day 14 — we won't rush a store and risk it breaking on your first customer.",
+    body: "One round of revisions included. Tell us anything you want changed. Once you're happy, we connect your domain and go live. We stay available for 7 days after launch for any small tweaks.",
+    detail: "Portfolio & info sites go live by Day 7. E-commerce stores by Day 14. We won't rush a store and risk it breaking on your first customer.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
@@ -378,7 +378,7 @@ export default function HowItWorks() {
               fontWeight: 700, color: "#1C1C1A", lineHeight: 1.1,
             }}>
               From WhatsApp message<br />
-              <span style={{ color: "#1A2848" }}>to live website — fast.</span>
+              <span style={{ color: "#1A2848" }}>to live website. Fast.</span>
             </h2>
             <div>
               <p style={{
@@ -399,7 +399,7 @@ export default function HowItWorks() {
                 }}>
                   <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#1A2848", flexShrink: 0 }} />
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", color: "#1A2848", textTransform: "uppercase" }}>
-                    Portfolio &amp; Info — 7 days
+                    Portfolio &amp; Info: 7 days
                   </span>
                 </div>
                 <div style={{
@@ -411,7 +411,7 @@ export default function HowItWorks() {
                 }}>
                   <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#F25C43", flexShrink: 0 }} />
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", color: "#F25C43", textTransform: "uppercase" }}>
-                    E-Commerce — 14 days
+                    E-Commerce: 14 days
                   </span>
                 </div>
               </div>

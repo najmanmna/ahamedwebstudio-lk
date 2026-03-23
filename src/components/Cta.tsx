@@ -139,7 +139,7 @@ export default function CTA() {
             transform: entered ? "translateY(0)" : "translateY(16px)",
             transition: "opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s",
           }}>
-            Send us a WhatsApp message — we'll reply with questions, a clear timeline, and an honest quote. No commitment required.
+            Send us a WhatsApp message. We'll reply with questions, a clear timeline, and an honest quote. No commitment required.
           </p>
 
           {/* Main CTA button */}
@@ -190,7 +190,7 @@ export default function CTA() {
           }}>
             {[
               { icon: "⚡", text: "Reply within a few hours" },
-              { icon: "💬", text: "No forms — just WhatsApp" },
+              { icon: "💬", text: "No forms. Just WhatsApp." },
               { icon: "🔒", text: "No commitment to enquire" },
             ].map((item, i) => (
               <div key={i} style={{
