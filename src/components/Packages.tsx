@@ -611,9 +611,7 @@ export default function Packages() {
           .pkg-card-wrap { display: none !important; }
           .pkg-card-wrap.pkg-active { display: block !important; }
           .pkg-card-wrap.pkg-active > div { transform: none !important; }
-          .ig-package-banner { flex-wrap: wrap; }
-          .ig-package-banner-copy { flex-basis: 100%; order: 1; }
-          .ig-package-banner-cta { order: 2; margin-left: 76px; }
+          .ig-package-banner { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; }
         }
         @media (min-width: 769px) and (max-width: 1024px) {
           .packages-grid { grid-template-columns: repeat(2,1fr) !important; }

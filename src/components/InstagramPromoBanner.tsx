@@ -104,9 +104,7 @@ export default function InstagramPromoBanner() {
           border-color: rgba(255,255,255,0.32);
         }
         @media (max-width: 700px) {
-          .ig-promo-banner { flex-wrap: wrap; padding: 20px !important; }
-          .ig-promo-banner-copy { flex-basis: 100%; }
-          .ig-promo-banner-cta { margin-left: 70px; }
+          .ig-promo-banner { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; padding: 20px !important; }
         }
       `}</style>
     </section>
