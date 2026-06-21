@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Hero from "@/components/Hero";
+import InstagramPromoBanner from '@/components/InstagramPromoBanner';
 import Work from '@/components/Work';
 import HowItWorks from '@/components/Howitworks';
 import Packages from '@/components/Packages';
@@ -14,6 +15,7 @@ export default function Page() {
     <div>
       <Navbar />
       <Hero />
+      <InstagramPromoBanner />
       <Work />
       <HowItWorks />
       <Packages />

@@ -1,8 +1,11 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [year] = useState(new Date().getFullYear());
   const [time, setTime] = useState("");
 
@@ -95,18 +98,19 @@ export default function Footer() {
             }}>Navigate</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {[
-                { label: "Our Work",  href: "#work" },
-                { label: "Process",   href: "#process" },
-                { label: "Packages",  href: "#packages" },
-                { label: "About",     href: "#about" },
-                { label: "Contact",   href: "#contact" },
+                { label: "Our Work",  href: "/#work" },
+                { label: "Process",   href: "/#process" },
+                { label: "Packages",  href: "/#packages" },
+                { label: "About",     href: "/#about" },
+                { label: "Contact",   href: "/#contact" },
               ].map(l => (
                 <a
                   key={l.href}
                   href={l.href}
                   onClick={e => {
+                    if (!isHome) return;
                     e.preventDefault();
-                    document.querySelector(l.href)?.scrollIntoView({ behavior: "smooth" });
+                    document.querySelector(`#${l.href.split("#")[1]}`)?.scrollIntoView({ behavior: "smooth" });
                   }}
                   style={{
                     fontFamily: "var(--font-sans)",

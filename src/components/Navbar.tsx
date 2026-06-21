@@ -1,15 +1,18 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 
 const NAV_LINKS = [
-  { label: "Work",     href: "#work" },
-  { label: "Process",  href: "#process" },
-  { label: "Packages", href: "#packages" },
-  { label: "About",    href: "#about" },
+  { label: "Work",     href: "/#work" },
+  { label: "Process",  href: "/#process" },
+  { label: "Packages", href: "/#packages" },
+  { label: "About",    href: "/#about" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled]       = useState(false);
   const [menuOpen, setMenuOpen]       = useState(false);
   const [activeSection, setActive]    = useState("");
@@ -21,9 +24,10 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // ── Active section detection ───────────────────────────────────────────────
+  // ── Active section detection (homepage only) ────────────────────────────────
   useEffect(() => {
-    const ids = NAV_LINKS.map(l => l.href.slice(1));
+    if (!isHome) return;
+    const ids = NAV_LINKS.map(l => l.href.split("#")[1]);
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
     }, { rootMargin: "-40% 0px -55% 0px" });
@@ -32,13 +36,14 @@ export default function Navbar() {
       if (el) obs.observe(el);
     });
     return () => obs.disconnect();
-  }, []);
+  }, [isHome]);
 
-  // ── Smooth scroll ─────────────────────────────────────────────────────────
+  // ── Smooth scroll on home, normal navigation elsewhere ───────────────────────
   const scrollTo = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
     setMenuOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    if (!isHome) return; // let the browser navigate to "/#section"
+    e.preventDefault();
+    document.querySelector(`#${href.split("#")[1]}`)?.scrollIntoView({ behavior: "smooth" });
   };
 
   const waLink = "https://wa.me/94717411188?text=Hi%20Najman%2C%20I%27m%20interested%20in%20getting%20a%20website%20built.";
@@ -130,7 +135,7 @@ export default function Navbar() {
                 key={l.href}
                 href={l.href}
                 onClick={e => scrollTo(e, l.href)}
-                className={`nav-link${activeSection === l.href.slice(1) ? " active" : ""}`}
+                className={`nav-link${activeSection === l.href.split("#")[1] ? " active" : ""}`}
               >
                 {l.label}
               </a>
@@ -262,7 +267,7 @@ export default function Navbar() {
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: 24, fontWeight: 700,
-                color: activeSection === l.href.slice(1) ? "#1A2848" : "#1C1C1A",
+                color: activeSection === l.href.split("#")[1] ? "#1A2848" : "#1C1C1A",
                 textDecoration: "none",
                 padding: "12px 0",
                 borderBottom: "1px solid #F0EEE9",

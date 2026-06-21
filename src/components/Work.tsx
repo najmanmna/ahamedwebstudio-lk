@@ -24,7 +24,7 @@ const PROJECTS: Project[] = [
     name: "Elvyn Store",
     category: "E-Commerce",
     location: "Colombo, LK",
-    story: "Sajid needed a proper online store, not just an Instagram page. We built a full Next.js storefront with product catalogue, cart, and mobile-first checkout. Delivered in 7 days.",
+    story: "Sajid needed a proper online store, not just an Instagram page. Since launching, the automated checkout and speed have completely removed his need to take orders manually via WhatsApp. We built a full Next.js storefront with product catalogue, cart, and mobile-first checkout. Delivered in 14 days.",
     result: "100/100 PageSpeed. Client left a 5-star review.",
     quote: "Ahamed is fully committed to delivering high-performance assets on time without compromising quality.",
     quoteName: "Sajid Ifham",

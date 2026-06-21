@@ -108,7 +108,7 @@ const PACKAGES: Package[] = [
       { text: "Product management dashboard, add and edit anytime", included: true },
       { text: "PageSpeed 90+ guaranteed", included: true },
       { text: "Domain connection", included: true },
-      { text: "1 round of revisions", included: true },
+      { text: "2 round of revisions", included: true },
       { text: "14 days post-launch support", included: true },
       { text: "Up to 50 products included", included: true },
     ],
@@ -500,9 +500,80 @@ export default function Packages() {
           ))}
         </div>
 
+        {/* Instagram Store Package — specialty banner */}
+        <a
+          href="/instagram-store"
+          className="ig-package-banner"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 24,
+            marginTop: 20,
+            padding: "26px 30px",
+            background: "#fff",
+            border: "1px solid #E5E3DD",
+            borderRadius: 10,
+            textDecoration: "none",
+            opacity: entered ? 1 : 0,
+            transform: entered ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s, border-color 0.25s, box-shadow 0.25s",
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.borderColor = "#E1306C44";
+            e.currentTarget.style.boxShadow = "0 12px 36px rgba(225,48,108,0.12)";
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.borderColor = "#E5E3DD";
+            e.currentTarget.style.boxShadow = "none";
+          }}
+        >
+          {/* Icon badge */}
+          <div style={{
+            width: 52, height: 52, borderRadius: 12, flexShrink: 0,
+            background: "linear-gradient(135deg, #F58529 0%, #E1306C 50%, #8134AF 100%)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+          }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </div>
+
+          {/* Copy */}
+          <div style={{ flex: 1, minWidth: 0 }} className="ig-package-banner-copy">
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4, flexWrap: "wrap" }}>
+              <h3 style={{
+                fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700,
+                color: "#1C1C1A",
+              }}>Instagram Store Package</h3>
+              <span style={{
+                padding: "2px 9px", borderRadius: 999,
+                background: "#FDEEF3", border: "1px solid #E1306C33",
+                fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.1em",
+                color: "#E1306C", textTransform: "uppercase", fontWeight: 500,
+              }}>New</span>
+            </div>
+            <p style={{
+              fontFamily: "var(--font-sans)", fontSize: 14, fontWeight: 400,
+              color: "#4E4E4B", lineHeight: 1.6,
+            }}>Sell straight from Instagram with a fast storefront and WhatsApp checkout. LKR 59,900 · delivered in 7 days.</p>
+          </div>
+
+          {/* CTA */}
+          <div style={{
+            display: "flex", alignItems: "center", gap: 6, flexShrink: 0,
+            fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em",
+            color: "#E1306C", textTransform: "uppercase", fontWeight: 500,
+          }} className="ig-package-banner-cta">
+            View Package
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </div>
+        </a>
+
         {/* Bottom notes */}
         <div style={{
-          marginTop: 40,
+          marginTop: 16,
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gap: 12,
@@ -540,6 +611,9 @@ export default function Packages() {
           .pkg-card-wrap { display: none !important; }
           .pkg-card-wrap.pkg-active { display: block !important; }
           .pkg-card-wrap.pkg-active > div { transform: none !important; }
+          .ig-package-banner { flex-wrap: wrap; }
+          .ig-package-banner-copy { flex-basis: 100%; order: 1; }
+          .ig-package-banner-cta { order: 2; margin-left: 76px; }
         }
         @media (min-width: 769px) and (max-width: 1024px) {
           .packages-grid { grid-template-columns: repeat(2,1fr) !important; }
