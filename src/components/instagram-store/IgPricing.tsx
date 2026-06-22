@@ -154,6 +154,17 @@ export default function IgPricing() {
             </a>
           </div>
         </div>
+
+        {/* Coverage note */}
+        <p style={{
+          textAlign: "center", marginTop: 24,
+          fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.06em",
+          color: "#8A8A86",
+          opacity: entered ? 1 : 0,
+          transition: "opacity 0.6s ease 0.3s",
+        }}>
+          🇱🇰 Sri Lanka • 🇦🇪 UAE • 🌍 International Projects Welcome
+        </p>
       </div>
     </section>
   );
