@@ -6,6 +6,7 @@ import Work from '@/components/Work';
 import HowItWorks from '@/components/Howitworks';
 import Packages from '@/components/Packages';
 import About from '@/components/About';
+import GoogleReviews from '@/components/GoogleReviews';
 import CTA from '@/components/Cta';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -20,6 +21,7 @@ export default function Page() {
       <HowItWorks />
       <Packages />
       <About />
+      <GoogleReviews />
       <CTA />
       <Footer />
     </div>
