@@ -238,13 +238,7 @@ export default function About() {
             }}>
               I'm Najman.<br />
               <span style={{ color: "#1A2848" }}>I build websites that</span>{" "}
-              <em style={{
-                fontStyle: "italic",
-                background: "linear-gradient(135deg, #F25C43, #C8A96E)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}>work.</em>
+              <span style={{ color: "#F25C43" }}>work.</span>
             </h2>
 
             <p style={{

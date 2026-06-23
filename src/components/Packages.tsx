@@ -581,9 +581,18 @@ export default function Packages() {
           transition: "opacity 0.6s ease 0.5s",
         }} className="notes-grid">
           {[
-            { icon: "💳", text: "50% advance to start · 50% on delivery" },
-            { icon: "🔄", text: "Revisions included, no extra charges for included rounds" },
-            { icon: "📞", text: "Not sure which package? WhatsApp us and we'll advise honestly" },
+            {
+              icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A2848" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>,
+              text: "50% advance to start · 50% on delivery",
+            },
+            {
+              icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A2848" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>,
+              text: "Revisions included, no extra charges for included rounds",
+            },
+            {
+              icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A2848" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 0 1.14 2 2 0 0 1 2 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.91 8.09a16 16 0 0 0 6 6l.36-.36a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>,
+              text: "Not sure which package? WhatsApp us and we'll advise honestly",
+            },
           ].map((note, i) => (
             <div key={i} style={{
               display: "flex", alignItems: "flex-start", gap: 10,
@@ -592,7 +601,7 @@ export default function Packages() {
               border: "1px solid #E5E3DD",
               borderRadius: 8,
             }}>
-              <span style={{ fontSize: 16, flexShrink: 0 }}>{note.icon}</span>
+              <span style={{ flexShrink: 0, display: "flex", marginTop: 2 }}>{note.icon}</span>
               <p style={{
                 fontFamily: "var(--font-sans)",
                 fontSize: 14, fontWeight: 400,

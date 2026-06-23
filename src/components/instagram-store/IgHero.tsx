@@ -155,13 +155,9 @@ export default function IgHero() {
               transition: "opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s",
             }}>
               Stop Losing Sales in Your{" "}
-              <em style={{
-                fontStyle: "italic",
-                background: "linear-gradient(135deg, #1A2848 0%, #F25C43 60%, #C8A96E 100%)",
-                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-              }}>
+              <span style={{ color: "#F25C43" }}>
                 Instagram DMs.
-              </em>
+              </span>
             </h1>
 
             {/* Subheadline */}

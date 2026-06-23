@@ -61,8 +61,9 @@ function SpeedVisual({ visible }: { visible: boolean }) {
           <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "#1A2848", letterSpacing: "0.1em", fontWeight: 500 }}>
             Ahamed Web Studio
           </span>
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "#1A2848", fontWeight: 700 }}>
-            0.8s ⚡
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "#1A2848", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 4 }}>
+            0.8s
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="#1A2848"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           </span>
         </div>
         <div style={{ height: 6, background: "#F5F0EB", borderRadius: 3, overflow: "hidden" }}>
@@ -203,19 +204,6 @@ export default function Hero() {
           0%,100% { transform: translateY(0px); }
           50%      { transform: translateY(-8px); }
         }
-        @keyframes bgPan {
-          0%   { background-position: 0% 50%; }
-          50%  { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        .hero-accent-text {
-          background: linear-gradient(135deg, #1A2848 0%, #F25C43 60%, #C8A96E 100%);
-          background-size: 200% auto;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          animation: bgPan 5s ease infinite;
-        }
         .float-card { animation: floatY 5s ease-in-out infinite; }
         .float-card-slow { animation: floatY 7s ease-in-out 1s infinite; }
       `}</style>
@@ -301,9 +289,9 @@ export default function Hero() {
             }}>
               Finally. A website<br />
               you'll actually be{" "}
-              <em className="hero-accent-text" style={{ fontStyle: "italic" }}>
+              <span style={{ color: "#F25C43" }}>
                 proud of.
-              </em>
+              </span>
             </h1>
 
             {/* Subtext */}

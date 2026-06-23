@@ -45,7 +45,7 @@ const PROJECTS: Project[] = [
     tags: ["Brand Design", "Skincare", "Editorial"],
     palette: { bg: "#FBF5EE", accent: "#C4915A", light: "#F5E6D3", dark: "#8B5E35" },
     url: "https://hedone-skincare.vercel.app",
-    metric: { label: "Reaction", value: "😮" },
+    metric: { label: "Client rating", value: "5★" },
   },
   {
     id: "03",

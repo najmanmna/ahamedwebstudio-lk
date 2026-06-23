@@ -117,13 +117,7 @@ export default function CTA() {
             transition: "opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s",
           }}>
             Let's build something<br />
-            <em style={{
-              fontStyle: "italic",
-              background: "linear-gradient(135deg, #F25C43 0%, #C8A96E 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}>you're proud of.</em>
+            <span style={{ color: "#F25C43" }}>you're proud of.</span>
           </h2>
 
           {/* Subtext */}
@@ -189,14 +183,23 @@ export default function CTA() {
             transition: "opacity 0.6s ease 0.55s",
           }}>
             {[
-              { icon: "⚡", text: "Reply within a few hours" },
-              { icon: "💬", text: "No forms. Just WhatsApp." },
-              { icon: "🔒", text: "No commitment to enquire" },
+              {
+                icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="rgba(255,255,255,0.6)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
+                text: "Reply within a few hours",
+              },
+              {
+                icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>,
+                text: "No forms. Just WhatsApp.",
+              },
+              {
+                icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>,
+                text: "No commitment to enquire",
+              },
             ].map((item, i) => (
               <div key={i} style={{
                 display: "flex", alignItems: "center", gap: 7,
               }}>
-                <span style={{ fontSize: 14 }}>{item.icon}</span>
+                <span style={{ display: "flex" }}>{item.icon}</span>
                 <span style={{
                   fontFamily: "var(--font-mono)",
                   fontSize: 12, letterSpacing: "0.12em",
