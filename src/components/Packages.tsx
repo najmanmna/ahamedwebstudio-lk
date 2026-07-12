@@ -41,19 +41,13 @@ const PACKAGES: Package[] = [
     bg: "#F5F4F0",
     cms: { available: true, price: "15,000" },
     features: [
-      { text: "1–5 pages (scoped on WhatsApp before quoting)", included: true },
-      { text: "Mobile-first, fully responsive", included: true },
-      { text: "Custom design, no templates", included: true },
-      { text: "Contact form with WhatsApp link", included: true },
-      { text: "Google Maps integration", included: true },
-      { text: "PageSpeed 90+ guaranteed", included: true },
-      { text: "Domain connection", included: true },
+      { text: "1–5 pages, scoped over WhatsApp", included: true },
+      { text: "Contact form + Google Maps", included: true },
       { text: "1 round of revisions", included: true },
       { text: "7 days post-launch support", included: true },
-      { text: "Product catalogue / shopping cart", included: false },
-      { text: "Payment gateway", included: false },
+      { text: "Online store & payments", included: false },
     ],
-    ideal: "Skincare brands, gyms, institutes, salons, clinics, freelancers, restaurants",
+    ideal: "Skincare brands, gyms, clinics, freelancers",
     cta: "Get a Quote",
   },
   {
@@ -71,19 +65,13 @@ const PACKAGES: Package[] = [
     cms: { available: true, price: "20,000" },
     features: [
       { text: "Up to 10 pages", included: true },
-      { text: "Mobile-first, fully responsive", included: true },
-      { text: "Custom design, no templates", included: true },
-      { text: "Blog / news section", included: true },
-      { text: "Team & careers pages", included: true },
-      { text: "Advanced contact & booking forms", included: true },
-      { text: "SEO-optimised structure", included: true },
-      { text: "PageSpeed 90+ guaranteed", included: true },
-      { text: "Domain connection", included: true },
+      { text: "Blog, team & careers pages", included: true },
+      { text: "Advanced booking forms, SEO-ready", included: true },
       { text: "2 rounds of revisions", included: true },
       { text: "30 days post-launch support", included: true },
-      { text: "Product catalogue / shopping cart", included: false },
+      { text: "Online store & payments", included: false },
     ],
-    ideal: "Agencies, law firms, hotels, schools, established brands",
+    ideal: "Agencies, law firms, hotels, schools",
     cta: "Get a Quote",
   },
   {
@@ -100,19 +88,14 @@ const PACKAGES: Package[] = [
     bg: "#FEF0ED",
     cms: { available: false, included: true },
     features: [
-      { text: "Full product catalogue with categories", included: true },
-      { text: "Mobile-first, fully responsive", included: true },
-      { text: "Custom design, no templates", included: true },
-      { text: "Shopping cart & checkout", included: true },
-      { text: "Payment gateway integration", included: true },
-      { text: "Product management dashboard, add and edit anytime", included: true },
-      { text: "PageSpeed 90+ guaranteed", included: true },
-      { text: "Domain connection", included: true },
-      { text: "2 round of revisions", included: true },
-      { text: "14 days post-launch support", included: true },
+      { text: "Full product catalogue & categories", included: true },
+      { text: "Cart, checkout & payment gateway", included: true },
+      { text: "Product dashboard, add/edit anytime", included: true },
       { text: "Up to 50 products included", included: true },
+      { text: "2 rounds of revisions", included: true },
+      { text: "14 days post-launch support", included: true },
     ],
-    ideal: "Fashion, food, beauty, electronics, handmade goods",
+    ideal: "Fashion, food, beauty, handmade goods",
     cta: "Get a Quote",
   },
 ];
@@ -433,8 +416,24 @@ export default function Packages() {
             color: "#4E4E4B", lineHeight: 1.75,
             maxWidth: 440, margin: "0 auto",
           }}>
-            Every project is quoted individually, but these starting prices give you a clear idea of what to expect. No hidden fees, no scope creep.
+            Starting prices — no hidden fees, no scope creep.
           </p>
+
+          {/* Baseline every package shares, stated once instead of repeated on every card */}
+          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: 8, marginTop: 20 }}>
+            {["Mobile-first design", "Custom build, no templates", "PageSpeed 90+", "Domain connection"].map(t => (
+              <span key={t} style={{
+                display: "inline-flex", alignItems: "center", gap: 6,
+                padding: "5px 12px",
+                background: "#fff", border: "1px solid #E5E3DD", borderRadius: 999,
+                fontFamily: "var(--font-mono)", fontSize: 10.5, letterSpacing: "0.08em",
+                color: "#4E4E4B", textTransform: "uppercase",
+              }}>
+                <Check color="#1A2848" />
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Mobile tab switcher — hidden on desktop via CSS */}
@@ -575,7 +574,7 @@ export default function Packages() {
         <div style={{
           marginTop: 16,
           display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
+          gridTemplateColumns: "repeat(2, 1fr)",
           gap: 12,
           opacity: entered ? 1 : 0,
           transition: "opacity 0.6s ease 0.5s",
@@ -584,10 +583,6 @@ export default function Packages() {
             {
               icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A2848" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>,
               text: "50% advance to start · 50% on delivery",
-            },
-            {
-              icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A2848" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>,
-              text: "Revisions included, no extra charges for included rounds",
             },
             {
               icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A2848" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 0 1.14 2 2 0 0 1 2 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.91 8.09a16 16 0 0 0 6 6l.36-.36a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>,

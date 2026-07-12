@@ -7,15 +7,13 @@ type Project = {
   name: string;
   category: string;
   location: string;
-  story: string;
-  result: string;
-  quote: string;
-  quoteName: string;
+  description: string;
   tags: string[];
   palette: { bg: string; accent: string; light: string; dark: string };
   url: string;
   urls?: { label: string; href: string }[];
   metric: { label: string; value: string };
+  screenshot: string;
 };
 
 const PROJECTS: Project[] = [
@@ -24,52 +22,43 @@ const PROJECTS: Project[] = [
     name: "Elvyn Store",
     category: "E-Commerce",
     location: "Colombo, LK",
-    story: "Sajid needed a proper online store, not just an Instagram page. Since launching, the automated checkout and speed have completely removed his need to take orders manually via WhatsApp. We built a full Next.js storefront with product catalogue, cart, and mobile-first checkout. Delivered in 14 days.",
-    result: "100/100 PageSpeed. Client left a 5-star review.",
-    quote: "Ahamed is fully committed to delivering high-performance assets on time without compromising quality.",
-    quoteName: "Sajid Ifham",
+    description: "A full online store that replaced manual WhatsApp order-taking — cart, checkout, mobile-first.",
     tags: ["Online Store", "Mobile-First", "Fast Delivery"],
     palette: { bg: "#EEF4FB", accent: "#2D6A9F", light: "#D6E8F7", dark: "#1A3F6F" },
     url: "https://elvynstore.com",
     metric: { label: "PageSpeed", value: "100" },
+    screenshot: "/work/elvyn-store.webp",
   },
   {
     id: "02",
     name: "HEDONE Skincare",
     category: "Brand Website",
     location: "Sri Lanka",
-    story: "Uthpala had been designing her own packaging because no one locally had the taste to match her brand. We built a website that matched the elegance of her products. Clean, warm, editorial.",
-    result: "Client's jaw dropped on first preview.",
-    quote: "For the first time someone nailed it and that's you!!!",
-    quoteName: "Uthpala Pathirana",
+    description: "A clean, editorial site that finally matched the elegance of her products.",
     tags: ["Brand Design", "Skincare", "Editorial"],
     palette: { bg: "#FBF5EE", accent: "#C4915A", light: "#F5E6D3", dark: "#8B5E35" },
     url: "https://hedone-skincare.vercel.app",
     metric: { label: "Client rating", value: "5★" },
+    screenshot: "/work/hedone-skincare.webp",
   },
   {
     id: "03",
     name: "Noorul Hudha",
     category: "Institute Website",
     location: "Sri Lanka",
-    story: "A Quran education institute needed a professional platform for class schedules, registration, and announcements. Clean, accessible, and fast on low-end mobile devices.",
-    result: "Complex requirements handled with patience and precision.",
-    quote: "The technical execution was perfect. Ahamed handled complex suggestions with extreme patience.",
-    quoteName: "Aalima Bint Nazeer",
+    description: "A fast, accessible platform for class schedules, registration, and announcements.",
     tags: ["Institute", "Registration", "Accessible"],
     palette: { bg: "#EEF5EF", accent: "#4A7C4E", light: "#D6EDD8", dark: "#2D5230" },
     url: "https://noorulhudhainstitute.com",
     metric: { label: "Delivered", value: "5 days" },
+    screenshot: "/work/noorul-hudha.webp",
   },
   {
     id: "04",
     name: "Ambrins: 3 Stores",
     category: "E-Commerce Suite",
     location: "Colombo, LK",
-    story: "One client, three separate product lines, three distinct brand identities. All launched within a single month. Each store had its own look, its own inventory logic, and its own customer experience.",
-    result: "Three live stores. One month. Zero compromises.",
-    quote: "The transition to our new digital engine was seamless.",
-    quoteName: "Ambrins Client",
+    description: "Three distinct brand identities, three stores, all launched within a single month.",
     tags: ["Multi-Store", "Fashion", "Rapid Launch"],
     palette: { bg: "#F5F0F8", accent: "#7B5EA7", light: "#E8DFF5", dark: "#4E3A6E" },
     url: "https://elda.lk",
@@ -79,6 +68,7 @@ const PROJECTS: Project[] = [
       { label: "thebalancedpantry.lk", href: "https://thebalancedpantry.lk" },
     ],
     metric: { label: "Stores", value: "3x" },
+    screenshot: "/work/ambrins.webp",
   },
 ];
 
@@ -87,17 +77,20 @@ const STATUS_H = 38;
 
 function IPhoneScreen({ project }: { project: Project }) {
   const { palette } = project;
-  const siteUrl = project.url || project.urls?.[0]?.href || null;
+  const imgRef = useRef<HTMLImageElement>(null);
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     setLoaded(false);
     setFailed(false);
-    if (!siteUrl) { setFailed(true); return; }
-    const t = setTimeout(() => setFailed(true), 7000);
-    return () => clearTimeout(t);
-  }, [siteUrl]);
+    // Server-rendered <img> tags can finish loading (from cache or a fast
+    // local fetch) before this effect attaches its listeners, so the
+    // native "load" event never reaches onLoad below — check directly.
+    if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
+      setLoaded(true);
+    }
+  }, [project.screenshot]);
 
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", background: palette.bg }}>
@@ -134,18 +127,20 @@ function IPhoneScreen({ project }: { project: Project }) {
         </div>
       </div>
 
-      {/* Live iframe — starts below status bar */}
-      {siteUrl && !failed && (
-        <iframe
-          src={siteUrl}
-          title={project.name}
+      {/* Cached screenshot — starts below status bar. Captured once per project,
+          not fetched from the live site on every visit. */}
+      {!failed && (
+        <img
+          ref={imgRef}
+          src={project.screenshot}
+          alt={`${project.name} — live site preview`}
+          loading="lazy"
           onLoad={() => setLoaded(true)}
+          onError={() => setFailed(true)}
           style={{
             position: "absolute", top: STATUS_H, left: 0,
-            width: 395, height: 844,
-            transform: "scale(0.553)",
-            transformOrigin: "top left",
-            border: "none", pointerEvents: "none",
+            width: "100%", height: `calc(100% - ${STATUS_H}px)`,
+            objectFit: "cover", objectPosition: "top center",
             opacity: loaded ? 1 : 0,
             transition: "opacity 0.5s ease",
           }}
@@ -482,123 +477,89 @@ export default function Work() {
                 ))}
               </div>
 
-              {/* Story */}
+              {/* Description */}
               <p style={{
                 fontFamily: "var(--font-sans)",
-                fontSize: 14, fontWeight: 300,
-                color: "#6B6B68", lineHeight: 1.8,
-                marginBottom: 16,
-              }}>{project.story}</p>
+                fontSize: 15, fontWeight: 300,
+                color: "#6B6B68", lineHeight: 1.75,
+                marginBottom: 26,
+              }}>{project.description}</p>
 
-              {/* Result */}
-              <div style={{
-                display: "flex", alignItems: "center", gap: 8,
-                padding: "9px 13px",
-                background: `${project.palette.accent}08`,
-                border: `1px solid ${project.palette.accent}22`,
-                borderRadius: 6, marginBottom: 18,
-              }}>
-                <div style={{ width: 6, height: 6, borderRadius: "50%", background: project.palette.accent, flexShrink: 0 }} />
-                <span style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: 9, letterSpacing: "0.1em",
-                  color: project.palette.accent, textTransform: "uppercase",
-                }}>{project.result}</span>
-              </div>
-
-              {/* Quote */}
-              <div style={{ borderLeft: `2px solid ${project.palette.light}`, paddingLeft: 14 }}>
-                <p style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: 13, fontWeight: 300,
-                  color: "#6B6B68", lineHeight: 1.7,
-                  fontStyle: "italic", marginBottom: 6,
-                }}>"{project.quote}"</p>
-                <p style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: 9, letterSpacing: "0.12em",
-                  color: "#1A2848",
-                }}>/ {project.quoteName}</p>
+              {/* Primary CTA — live site link(s) */}
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+                {project.urls ? (
+                  project.urls.map(u => (
+                    <a key={u.href} href={u.href} target="_blank" rel="noopener noreferrer"
+                      style={{
+                        display: "inline-flex", alignItems: "center", gap: 7,
+                        padding: "11px 16px",
+                        background: project.palette.accent,
+                        borderRadius: 6,
+                        fontFamily: "var(--font-mono)",
+                        fontSize: 11, letterSpacing: "0.08em",
+                        color: "#fff", textDecoration: "none", fontWeight: 500,
+                        transition: "opacity 0.2s, transform 0.2s",
+                      }}
+                      onMouseEnter={e => { e.currentTarget.style.opacity = "0.85"; e.currentTarget.style.transform = "translateY(-1px)"; }}
+                      onMouseLeave={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.transform = "translateY(0)"; }}
+                    >
+                      {u.label}
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                    </a>
+                  ))
+                ) : project.url ? (
+                  <a href={project.url} target="_blank" rel="noopener noreferrer"
+                    style={{
+                      display: "inline-flex", alignItems: "center", gap: 8,
+                      padding: "13px 22px",
+                      background: project.palette.accent,
+                      borderRadius: 6,
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 12, letterSpacing: "0.1em",
+                      color: "#fff", textDecoration: "none", fontWeight: 500,
+                      boxShadow: `0 6px 20px ${project.palette.accent}40`,
+                      transition: "opacity 0.2s, transform 0.2s",
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.opacity = "0.88"; e.currentTarget.style.transform = "translateY(-1px)"; }}
+                    onMouseLeave={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.transform = "translateY(0)"; }}
+                  >
+                    Visit Live Site
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </a>
+                ) : (
+                  <span style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: 10, letterSpacing: "0.12em",
+                    color: "#C5C3BD",
+                  }}>Private project</span>
+                )}
               </div>
             </div>
 
-            {/* Bottom nav */}
+            {/* Bottom nav — project switcher */}
             <div style={{ marginTop: 28 }}>
               <div style={{ height: 1, background: "#F0EEE9", marginBottom: 20 }} />
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-
-                {/* Project selector tabs */}
-                <div style={{ display: "flex", gap: 6 }}>
-                  {PROJECTS.map((p, i) => (
-                    <button
-                      key={p.id}
-                      onClick={() => goTo(i)}
-                      style={{
-                        all: "unset", cursor: "pointer",
-                        padding: "5px 10px",
-                        borderRadius: 4,
-                        fontFamily: "var(--font-mono)",
-                        fontSize: 8, letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        background: i === active ? p.palette.accent : "transparent",
-                        color: i === active ? "#fff" : "#6B6B68",
-                        border: `1px solid ${i === active ? p.palette.accent : "#E5E3DD"}`,
-                        transition: "all 0.25s ease",
-                      }}
-                    >
-                      {p.id}
-                    </button>
-                  ))}
-                </div>
-
-                {/* Live links */}
-                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                  {project.urls ? (
-                    project.urls.map(u => (
-                      <a key={u.href} href={u.href} target="_blank" rel="noopener noreferrer"
-                        style={{
-                          display: "inline-flex", alignItems: "center", gap: 4,
-                          padding: "5px 10px",
-                          background: project.palette.accent,
-                          borderRadius: 4,
-                          fontFamily: "var(--font-mono)",
-                          fontSize: 8, letterSpacing: "0.1em",
-                          color: "#fff", textDecoration: "none",
-                          transition: "opacity 0.2s",
-                        }}
-                        onMouseEnter={e => e.currentTarget.style.opacity = "0.8"}
-                        onMouseLeave={e => e.currentTarget.style.opacity = "1"}
-                      >
-                        {u.label}
-                        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
-                      </a>
-                    ))
-                  ) : project.url ? (
-                    <a href={project.url} target="_blank" rel="noopener noreferrer"
-                      style={{
-                        display: "inline-flex", alignItems: "center", gap: 5,
-                        padding: "6px 14px",
-                        background: project.palette.accent,
-                        borderRadius: 4,
-                        fontFamily: "var(--font-mono)",
-                        fontSize: 9, letterSpacing: "0.12em",
-                        color: "#fff", textDecoration: "none",
-                        transition: "opacity 0.2s",
-                      }}
-                      onMouseEnter={e => e.currentTarget.style.opacity = "0.8"}
-                      onMouseLeave={e => e.currentTarget.style.opacity = "1"}
-                    >
-                      View Live
-                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
-                    </a>
-                  ) : (
-                    <span style={{
+              <div style={{ display: "flex", gap: 6 }}>
+                {PROJECTS.map((p, i) => (
+                  <button
+                    key={p.id}
+                    onClick={() => goTo(i)}
+                    style={{
+                      all: "unset", cursor: "pointer",
+                      padding: "5px 10px",
+                      borderRadius: 4,
                       fontFamily: "var(--font-mono)",
-                      fontSize: 8, letterSpacing: "0.12em",
-                      color: "#C5C3BD",
-                    }}>Private project</span>
-                  )}
-                </div>
+                      fontSize: 8, letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      background: i === active ? p.palette.accent : "transparent",
+                      color: i === active ? "#fff" : "#6B6B68",
+                      border: `1px solid ${i === active ? p.palette.accent : "#E5E3DD"}`,
+                      transition: "all 0.25s ease",
+                    }}
+                  >
+                    {p.id}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
@@ -642,7 +603,7 @@ export default function Work() {
           }
           .work-panel > div:last-child {
             padding: 28px 20px 24px !important;
-            min-height: 580px !important;
+            min-height: 0 !important;
           }
           .work-phone-wrap { animation: none !important; }
         }

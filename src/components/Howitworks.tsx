@@ -8,7 +8,6 @@ type Step = {
   day: string;
   title: string;
   body: string;
-  detail: string;
   icon: ReactNode;
   color: string;
   bg: string;
@@ -20,8 +19,7 @@ const STEPS = [
     number: "01",
     day: "Day 1",
     title: "You message us on WhatsApp",
-    body: "Tell us what you need: a new store, a portfolio, a business site. No forms, no calls, no waiting. Just send us a message and we'll reply within a few hours with questions and a clear quote.",
-    detail: "We'll ask about your business, your target customers, any sites you like the look of, and your timeline. That's it.",
+    body: "Tell us what you need — a store, a portfolio, a business site. No forms, no calls. We reply within a few hours with questions and a clear quote.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -34,8 +32,7 @@ const STEPS = [
     number: "02",
     day: "Day 1–2",
     title: "We agree on a plan and you pay the advance",
-    body: "Once we agree on scope, design direction and price, we send a simple invoice. 50% advance to start, 50% on delivery. No surprises.",
-    detail: "Bank transfer, direct. Straightforward. We start building the same day your advance lands.",
+    body: "Once we agree on scope and price, you pay 50% to start by bank transfer — no surprises. We start building the same day it lands.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="5" width="20" height="14" rx="2"/>
@@ -49,8 +46,7 @@ const STEPS = [
     number: "03",
     day: "Day 3–5 / Day 5–10",
     title: "We build and send you a live preview",
-    body: "We design and develop your site. Real code, real design, built specifically for your brand. You get a live preview link (not a screenshot) so you can click through the actual site on your phone.",
-    detail: "Portfolio & info sites: preview by Day 5. E-commerce stores: preview by Day 10. Product setup, payment gateway, and mobile checkout all need proper time. This is where most clients say 'wow'.",
+    body: "We design and build your site, then send a live preview link — not a screenshot — so you can click through the real thing on your phone.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="16 18 22 12 16 6"/>
@@ -64,8 +60,7 @@ const STEPS = [
     number: "04",
     day: "Day 6–7 / Day 11–14",
     title: "You review, we refine, we launch",
-    body: "One round of revisions included. Tell us anything you want changed. Once you're happy, we connect your domain and go live. We stay available for 7 days after launch for any small tweaks.",
-    detail: "Portfolio & info sites go live by Day 7. E-commerce stores by Day 14. We won't rush a store and risk it breaking on your first customer.",
+    body: "One round of revisions, then we connect your domain and go live. We stay on for 7 days after launch for any small tweaks.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
@@ -154,6 +149,34 @@ function StepCard({ step, index, active, onClick, entered, paused }: { step: Ste
             lineHeight: 1.3,
             transition: "color 0.3s",
           }}>{step.title}</h3>
+
+          {/* Mobile-only inline body, always shown (desktop reads this in the
+              sticky detail panel instead, hidden here via CSS). Kept static
+              rather than collapsed/expanded per step — an accordion here
+              reflows every card below it and shifts the page on tap. */}
+          <div className="step-mobile-body">
+            <p style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: 14, fontWeight: 400,
+              color: "#4E4E4B", lineHeight: 1.65,
+              paddingTop: 10,
+            }}>{step.body}</p>
+            {step.number === "04" && (
+              <a
+                href="https://wa.me/94717411188?text=Hi%20Najman%2C%20I%27d%20like%20to%20get%20started%20on%20a%20website."
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={e => e.stopPropagation()}
+                className="btn-primary btn-wa"
+                style={{ marginTop: 10, display: "inline-flex", padding: "10px 18px", fontSize: 11, letterSpacing: "0.1em" }}
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Start My Website
+              </a>
+            )}
+          </div>
         </div>
       </div>
 
@@ -194,7 +217,6 @@ function DetailPanel({ step }: { step: Step }) {
       opacity: visible ? 1 : 0,
       transform: visible ? "translateY(0)" : "translateY(12px)",
       transition: "opacity 0.4s ease, transform 0.4s ease",
-      height: "100%",
     }}>
       {/* Colored top band */}
       <div style={{
@@ -214,24 +236,11 @@ function DetailPanel({ step }: { step: Step }) {
           }}>
             {step.icon}
           </div>
-          <div>
-            <p style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: 12, letterSpacing: "0.16em",
-              color: step.color, textTransform: "uppercase", marginBottom: 3,
-            }}>{step.day} · Step {step.number}</p>
-            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              {[0,1,2,3].map(i => (
-                <div key={i} style={{
-                  width: i < parseInt(step.number) ? 20 : 8,
-                  height: 3,
-                  borderRadius: 2,
-                  background: i < parseInt(step.number) ? step.color : "#E5E3DD",
-                  transition: "all 0.4s ease",
-                }} />
-              ))}
-            </div>
-          </div>
+          <p style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: 12, letterSpacing: "0.16em",
+            color: step.color, textTransform: "uppercase",
+          }}>{step.day} · Step {step.number}</p>
         </div>
 
         {/* Title */}
@@ -249,35 +258,7 @@ function DetailPanel({ step }: { step: Step }) {
           fontFamily: "var(--font-sans)",
           fontSize: 16, fontWeight: 400,
           color: "#4E4E4B", lineHeight: 1.8,
-          marginBottom: 20,
         }}>{step.body}</p>
-
-        {/* Detail callout */}
-        <div style={{
-          padding: "14px 16px",
-          background: step.bg,
-          border: `1px solid ${step.color}22`,
-          borderRadius: 6,
-          display: "flex", gap: 10, alignItems: "flex-start",
-        }}>
-          <div style={{
-            width: 18, height: 18,
-            borderRadius: "50%",
-            background: step.color,
-            display: "flex", alignItems: "center", justifyContent: "center",
-            flexShrink: 0, marginTop: 1,
-          }}>
-            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round">
-              <path d="M12 8v4m0 4h.01"/>
-            </svg>
-          </div>
-          <p style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: 14, fontWeight: 400,
-            color: "#1C1C1A", lineHeight: 1.65,
-            fontStyle: "italic",
-          }}>{step.detail}</p>
-        </div>
 
         {/* CTA on last step */}
         {step.number === "04" && (
@@ -387,7 +368,7 @@ export default function HowItWorks() {
                 color: "#4E4E4B", lineHeight: 1.75, maxWidth: 300,
                 marginBottom: 14,
               }}>
-                No confusing process. No weeks of back and forth. Honest timelines for every project type.
+                No confusing process, no weeks of back and forth.
               </p>
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                 <div style={{
@@ -491,14 +472,14 @@ export default function HowItWorks() {
         @keyframes shimmer { from { background-position: -200% center; } to { background-position: 200% center; } }
         @keyframes processProgressGrow { from { width: 0%; } to { width: 100%; } }
         .process-progress-bar { animation: processProgressGrow 4s linear forwards; }
+        .step-mobile-body { display: none; }
         @media (max-width: 768px) {
           .process-grid { grid-template-columns: 1fr !important; }
-          .process-detail {
-            position: static !important;
-            order: -1;
-            height: 620px !important;
-            overflow: hidden !important;
-          }
+          /* Detail reads inline in each step card instead of a separate
+             panel — on mobile that panel forced scrolling down to pick a
+             step, then back up to read it. */
+          .process-detail { display: none !important; }
+          .step-mobile-body { display: block !important; }
         }
       `}</style>
     </section>
