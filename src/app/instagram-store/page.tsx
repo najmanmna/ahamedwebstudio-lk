@@ -22,6 +22,21 @@ export const metadata: Metadata = {
     title: "Stop Losing Sales in Your Instagram DMs",
     description:
       "Turn your Instagram page into a fast-loading storefront with WhatsApp checkout. Delivered in 7 days for LKR 59,900.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ahamed Web Studio: Professional Websites for Sri Lankan Businesses",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Stop Losing Sales in Your Instagram DMs",
+    description:
+      "Turn your Instagram page into a fast-loading storefront with WhatsApp checkout. Delivered in 7 days for LKR 59,900.",
+    images: ["/og-image.jpg"],
   },
 };
 

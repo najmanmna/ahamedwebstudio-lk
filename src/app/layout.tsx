@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, DM_Sans, DM_Mono } from "next/font/google";
+import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
 // ── FONTS ────────────────────────────────────────────────────────────────────
@@ -80,12 +81,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
     },
   },
-  icons: {
-    icon: [
-      { url: "/logo-trans.png", type: "image/png" },
-    ],
-    apple: "/logo-trans.png",
-  },
 };
 
 export const viewport: Viewport = {
@@ -105,7 +100,10 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${dmSans.variable} ${dmMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <StructuredData />
+        {children}
+      </body>
     </html>
   );
 }

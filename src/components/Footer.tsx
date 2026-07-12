@@ -192,39 +192,6 @@ export default function Footer() {
                 </div>
               </a>
             </div>
-
-            {/* .com link */}
-            <a
-              href="https://ahamedwebstudio.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-flex", alignItems: "center", gap: 6,
-                padding: "7px 12px",
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: 6,
-                fontFamily: "var(--font-mono)",
-                fontSize: 11, letterSpacing: "0.1em",
-                color: "rgba(255,255,255,0.5)",
-                textDecoration: "none",
-                textTransform: "uppercase",
-                transition: "border-color 0.2s, color 0.2s",
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.35)";
-                e.currentTarget.style.color = "rgba(255,255,255,0.85)";
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
-                e.currentTarget.style.color = "rgba(255,255,255,0.5)";
-              }}
-            >
-              ahamedwebstudio.com
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M7 17L17 7M7 7h10v10"/>
-              </svg>
-            </a>
           </div>
         </div>
 
