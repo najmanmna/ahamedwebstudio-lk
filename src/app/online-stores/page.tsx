@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   description:
     "Custom online store packages for Sri Lankan businesses, from LKR 29,900. WhatsApp ordering, shopping carts, or full payment gateway checkout — pick the stage that fits.",
   alternates: {
-    canonical: "https://ahamedwebstudio.lk/online-stores",
+    canonical: "https://www.ahamedwebstudio.lk/online-stores",
   },
   openGraph: {
     type: "website",
-    url: "https://ahamedwebstudio.lk/online-stores",
+    url: "https://www.ahamedwebstudio.lk/online-stores",
     title: "Start Selling Online from LKR 29,900",
     description:
       "Custom online store packages for Sri Lankan businesses. Fully custom design, Sanity CMS, and a delivery timeline built for your stage.",

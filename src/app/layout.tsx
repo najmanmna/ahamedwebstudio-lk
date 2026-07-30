@@ -42,16 +42,16 @@ export const metadata: Metadata = {
     "website colombo",
     "ahamed web studio",
   ],
-  authors: [{ name: "Ahamed Najman", url: "https://ahamedwebstudio.lk" }],
+  authors: [{ name: "Ahamed Najman", url: "https://www.ahamedwebstudio.lk" }],
   creator: "Ahamed Web Studio",
-  metadataBase: new URL("https://ahamedwebstudio.lk"),
+  metadataBase: new URL("https://www.ahamedwebstudio.lk"),
   alternates: {
-    canonical: "https://ahamedwebstudio.lk",
+    canonical: "https://www.ahamedwebstudio.lk",
   },
   openGraph: {
     type: "website",
     locale: "en_LK",
-    url: "https://ahamedwebstudio.lk",
+    url: "https://www.ahamedwebstudio.lk",
     siteName: "Ahamed Web Studio",
     title: "Ahamed Web Studio | Professional Websites for Sri Lankan Businesses",
     description:

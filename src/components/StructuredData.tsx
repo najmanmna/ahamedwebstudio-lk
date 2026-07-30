@@ -20,11 +20,11 @@ const REVIEWS = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ProfessionalService"],
-  "@id": "https://ahamedwebstudio.lk/#business",
+  "@id": "https://www.ahamedwebstudio.lk/#business",
   name: "Ahamed Web Studio",
-  url: "https://ahamedwebstudio.lk",
-  image: "https://ahamedwebstudio.lk/og-image.jpg",
-  logo: "https://ahamedwebstudio.lk/logo.png",
+  url: "https://www.ahamedwebstudio.lk",
+  image: "https://www.ahamedwebstudio.lk/og-image.jpg",
+  logo: "https://www.ahamedwebstudio.lk/logo.png",
   description:
     "Fast, professional websites for Sri Lankan businesses — e-commerce stores, portfolios, and business sites, built in Colombo.",
   telephone: "+94717411188",
