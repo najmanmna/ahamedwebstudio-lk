@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${base}/instagram-store`,
+      url: `${base}/online-stores`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.8,

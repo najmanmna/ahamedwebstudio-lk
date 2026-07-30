@@ -74,7 +74,7 @@ export default function Footer() {
               International-grade websites for Sri Lankan businesses. Fast, beautiful, and built to last.
             </p>
             {/* Live time */}
-            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 10 }}>
               <div style={{
                 width: 6, height: 6, borderRadius: "50%",
                 background: "#25D366",
@@ -85,6 +85,19 @@ export default function Footer() {
                 fontSize: 11, letterSpacing: "0.12em",
                 color: "rgba(255,255,255,0.5)",
               }}>Colombo · {time}</span>
+            </div>
+
+            {/* Registered business */}
+            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.45)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+              <span style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 11, letterSpacing: "0.12em",
+                color: "rgba(255,255,255,0.5)",
+              }}>Registered Business in Sri Lanka</span>
             </div>
           </div>
 
@@ -98,17 +111,17 @@ export default function Footer() {
             }}>Navigate</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {[
-                { label: "Our Work",  href: "/#work" },
-                { label: "Process",   href: "/#process" },
-                { label: "Packages",  href: "/#packages" },
-                { label: "About",     href: "/#about" },
-                { label: "Contact",   href: "/#contact" },
+                { label: "Our Work",      href: "/#work" },
+                { label: "Process",       href: "/#process" },
+                { label: "Online Stores", href: "/online-stores" },
+                { label: "About",         href: "/#about" },
+                { label: "Contact",       href: "/#contact" },
               ].map(l => (
                 <a
                   key={l.href}
                   href={l.href}
                   onClick={e => {
-                    if (!isHome) return;
+                    if (!l.href.includes("#") || !isHome) return;
                     e.preventDefault();
                     document.querySelector(`#${l.href.split("#")[1]}`)?.scrollIntoView({ behavior: "smooth" });
                   }}

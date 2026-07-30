@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export default function InstagramPromoBanner() {
+export default function OnlineStorePromoBanner() {
   const ref = useRef<HTMLElement>(null);
   const [entered, setEntered] = useState(false);
 
@@ -24,8 +24,8 @@ export default function InstagramPromoBanner() {
       }}
     >
       <a
-        href="/instagram-store"
-        className="ig-promo-banner"
+        href="/online-stores"
+        className="store-promo-banner"
         style={{
           display: "flex",
           alignItems: "center",
@@ -54,30 +54,30 @@ export default function InstagramPromoBanner() {
         {/* Icon badge */}
         <div style={{
           width: 46, height: 46, borderRadius: 11, flexShrink: 0,
-          background: "linear-gradient(135deg, #F58529 0%, #E1306C 50%, #8134AF 100%)",
+          background: "linear-gradient(135deg, #F25C43 0%, #C8A96E 100%)",
           display: "flex", alignItems: "center", justifyContent: "center",
           position: "relative", zIndex: 1,
         }}>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5"/>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <path d="M3 6h18"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
           </svg>
         </div>
 
         {/* Copy */}
-        <div style={{ flex: 1, minWidth: 0, position: "relative", zIndex: 1 }} className="ig-promo-banner-copy">
+        <div style={{ flex: 1, minWidth: 0, position: "relative", zIndex: 1 }} className="store-promo-banner-copy">
           <p style={{
             fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700,
             color: "#fff", marginBottom: 3,
           }}>
-            Got an Instagram Page? We built something just for you.
+            Sell your products online, from LKR 29,900.
           </p>
           <p style={{
             fontFamily: "var(--font-sans)", fontSize: 13.5, fontWeight: 400,
             color: "rgba(255,255,255,0.7)", lineHeight: 1.55,
           }}>
-            A fast storefront with direct WhatsApp checkout — no more answering DMs all day.
+            Custom online store packages — WhatsApp ordering, cart checkout, or full online payments.
           </p>
         </div>
 
@@ -92,19 +92,19 @@ export default function InstagramPromoBanner() {
           color: "#fff", textTransform: "uppercase", fontWeight: 500,
           position: "relative", zIndex: 1,
           transition: "background 0.2s, border-color 0.2s",
-        }} className="ig-promo-banner-cta">
-          See the Offer
+        }} className="store-promo-banner-cta">
+          View Packages
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
         </div>
       </a>
 
       <style>{`
-        .ig-promo-banner:hover .ig-promo-banner-cta {
+        .store-promo-banner:hover .store-promo-banner-cta {
           background: rgba(255,255,255,0.18);
           border-color: rgba(255,255,255,0.32);
         }
         @media (max-width: 700px) {
-          .ig-promo-banner { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; padding: 20px !important; }
+          .store-promo-banner { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; padding: 20px !important; }
         }
       `}</style>
     </section>

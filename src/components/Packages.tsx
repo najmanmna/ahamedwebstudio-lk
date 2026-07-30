@@ -499,10 +499,10 @@ export default function Packages() {
           ))}
         </div>
 
-        {/* Instagram Store Package — specialty banner */}
+        {/* Online Store Packages — specialty banner */}
         <a
-          href="/instagram-store"
-          className="ig-package-banner"
+          href="/online-stores"
+          className="store-package-banner"
           style={{
             display: "flex",
             alignItems: "center",
@@ -518,8 +518,8 @@ export default function Packages() {
             transition: "opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s, border-color 0.25s, box-shadow 0.25s",
           }}
           onMouseEnter={e => {
-            e.currentTarget.style.borderColor = "#E1306C44";
-            e.currentTarget.style.boxShadow = "0 12px 36px rgba(225,48,108,0.12)";
+            e.currentTarget.style.borderColor = "#F25C4344";
+            e.currentTarget.style.boxShadow = "0 12px 36px rgba(242,92,67,0.12)";
           }}
           onMouseLeave={e => {
             e.currentTarget.style.borderColor = "#E5E3DD";
@@ -529,43 +529,43 @@ export default function Packages() {
           {/* Icon badge */}
           <div style={{
             width: 52, height: 52, borderRadius: 12, flexShrink: 0,
-            background: "linear-gradient(135deg, #F58529 0%, #E1306C 50%, #8134AF 100%)",
+            background: "linear-gradient(135deg, #F25C43 0%, #C8A96E 100%)",
             display: "flex", alignItems: "center", justifyContent: "center",
           }}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5"/>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+              <path d="M3 6h18"/>
+              <path d="M16 10a4 4 0 01-8 0"/>
             </svg>
           </div>
 
           {/* Copy */}
-          <div style={{ flex: 1, minWidth: 0 }} className="ig-package-banner-copy">
+          <div style={{ flex: 1, minWidth: 0 }} className="store-package-banner-copy">
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4, flexWrap: "wrap" }}>
               <h3 style={{
                 fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700,
                 color: "#1C1C1A",
-              }}>Instagram Store Package</h3>
+              }}>Online Store Packages</h3>
               <span style={{
                 padding: "2px 9px", borderRadius: 999,
-                background: "#FDEEF3", border: "1px solid #E1306C33",
+                background: "#FEF0ED", border: "1px solid #F25C4333",
                 fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.1em",
-                color: "#E1306C", textTransform: "uppercase", fontWeight: 500,
+                color: "#F25C43", textTransform: "uppercase", fontWeight: 500,
               }}>New</span>
             </div>
             <p style={{
               fontFamily: "var(--font-sans)", fontSize: 14, fontWeight: 400,
               color: "#4E4E4B", lineHeight: 1.6,
-            }}>Sell straight from Instagram with a fast storefront and WhatsApp checkout. LKR 59,900 · delivered in 7 days.</p>
+            }}>WhatsApp ordering, cart checkout, or full online payments — from LKR 29,900.</p>
           </div>
 
           {/* CTA */}
           <div style={{
             display: "flex", alignItems: "center", gap: 6, flexShrink: 0,
             fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em",
-            color: "#E1306C", textTransform: "uppercase", fontWeight: 500,
-          }} className="ig-package-banner-cta">
-            View Package
+            color: "#F25C43", textTransform: "uppercase", fontWeight: 500,
+          }} className="store-package-banner-cta">
+            View Packages
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
           </div>
         </a>
@@ -615,7 +615,7 @@ export default function Packages() {
           .pkg-card-wrap { display: none !important; }
           .pkg-card-wrap.pkg-active { display: block !important; }
           .pkg-card-wrap.pkg-active > div { transform: none !important; }
-          .ig-package-banner { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; }
+          .store-package-banner { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; }
         }
         @media (min-width: 769px) and (max-width: 1024px) {
           .packages-grid { grid-template-columns: repeat(2,1fr) !important; }

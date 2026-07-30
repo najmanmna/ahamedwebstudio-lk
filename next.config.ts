@@ -13,6 +13,15 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/instagram-store",
+        destination: "/online-stores",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -4,10 +4,10 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 
 const NAV_LINKS = [
-  { label: "Work",     href: "/#work" },
-  { label: "Process",  href: "/#process" },
-  { label: "Packages", href: "/#packages" },
-  { label: "About",    href: "/#about" },
+  { label: "Work",          href: "/#work" },
+  { label: "Process",       href: "/#process" },
+  { label: "Online Stores", href: "/online-stores" },
+  { label: "About",         href: "/#about" },
 ];
 
 export default function Navbar() {
@@ -40,6 +40,7 @@ export default function Navbar() {
 
   // ── Smooth scroll on home, normal navigation elsewhere ───────────────────────
   const scrollTo = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.includes("#")) return; // plain page link, let it navigate normally
     setMenuOpen(false);
     if (!isHome) return; // let the browser navigate to "/#section"
     e.preventDefault();
