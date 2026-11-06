@@ -45,6 +45,11 @@ export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
   applicationName: "PrayerStop",
+  // Replaces the studio icons from the root layout, so the tab shows PrayerStop.
+  icons: {
+    icon: [{ url: "/prayerstop/icon.png", type: "image/png", sizes: "192x192" }],
+    apple: [{ url: "/prayerstop/apple-icon.png", sizes: "180x180" }],
+  },
   keywords: [
     "PrayerStop",
     "prayer times sri lanka",

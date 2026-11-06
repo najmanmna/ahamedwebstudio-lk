@@ -44,6 +44,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ahamed Najman", url: "https://www.ahamedwebstudio.lk" }],
   creator: "Ahamed Web Studio",
+  icons: {
+    icon: [
+      { url: "/favicon.ico?v=2", sizes: "48x48" },
+      { url: "/icon.png?v=2", type: "image/png", sizes: "192x192" },
+    ],
+    apple: [{ url: "/apple-icon.png?v=2", sizes: "180x180" }],
+  },
   metadataBase: new URL("https://www.ahamedwebstudio.lk"),
   alternates: {
     canonical: "https://www.ahamedwebstudio.lk",
