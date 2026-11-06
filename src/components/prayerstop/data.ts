@@ -85,9 +85,9 @@ export const SCREENSHOTS = [
     caption: "The current prayer, time left, and today's full timetable.",
   },
   {
-    src: "/prayerstop/screenshots/recommendation.webp",
+    src: "/prayerstop/screenshots/best-place.webp",
     title: "Best place to pray",
-    caption: "The mosque to head to, and whether you'll get there in time.",
+    caption: "The mosque to head to, and a clear warning when time is tight.",
   },
   {
     src: "/prayerstop/screenshots/nearby.webp",

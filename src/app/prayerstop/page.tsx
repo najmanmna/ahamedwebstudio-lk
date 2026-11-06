@@ -286,15 +286,15 @@ export default function PrayerStopPage() {
                   mosque is quicker to reach in traffic, that&apos;s the one it suggests.
                 </p>
                 <ul className={s.checkList}>
-                  <li><CheckIcon size={16} /> Tells you plainly if you&apos;ll make it</li>
+                  <li><CheckIcon size={16} /> Says if it&apos;s tight, just in time or too late</li>
                   <li><CheckIcon size={16} /> Shows two alternatives nearby</li>
                   <li><CheckIcon size={16} /> Gives a leave-by time when planning for Next</li>
                 </ul>
               </div>
               <div className={s.spotlightVisual}>
                 <Phone
-                  src="/prayerstop/screenshots/recommendation.webp"
-                  alt="PrayerStop recommendation card: Best for Maghrib is Masjidul Jennah, 0.8 km away, You can make it in time, with a Get directions button"
+                  src="/prayerstop/screenshots/best-place.webp"
+                  alt="PrayerStop recommendation: Best for Maghrib is Masjidul Jennah, 4 minutes away, marked It's tight, but you can make it. Other nearby mosques are marked Just in time and Too late to reach."
                   sizes="(max-width: 760px) 64vw, 280px"
                 />
               </div>
